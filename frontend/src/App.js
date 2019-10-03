@@ -2,23 +2,26 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import NavBar from './NavBar';
 import Routes from './Routes';
+import JoblyApi from './JoblyApi';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loggedIn: false,
-      currentUser: {}
+      currentUser: {
+      }
     }
 
     this.changeLoginState = this.changeLoginState.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     if (localStorage.getItem("_token")) {
-
+      let user = await JoblyApi.getUser(localStorage.getItem("username"))
       this.setState({
-        loggedIn: true
+        loggedIn: true,
+        currentUser: user
       })
     }
     else {
@@ -38,8 +41,13 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <NavBar loggedIn={this.state.loggedIn} />
-          <Routes changeLoginState={this.changeLoginState} />
+          <NavBar
+            loggedIn={this.state.loggedIn}
+          />
+          <Routes
+            loggedIn={this.state.loggedIn}
+            currentUser = {this.state.currentUser}
+            changeLoginState={this.changeLoginState} />
         </BrowserRouter>
       </div >
     )

@@ -5,6 +5,7 @@ class Logout extends Component {
   async componentDidMount() {
     this.props.changeLoginState()
     localStorage.removeItem("_token")
+    localStorage.removeItem("username")
   }
   render() {
     return (

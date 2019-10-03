@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import JoblyApi from "./JoblyApi"
 import JobCard from "./JobCard";
+import {Redirect} from 'react-router-dom';
 
 
 class Company extends Component {
@@ -25,6 +26,7 @@ class Company extends Component {
     console.log("YA", this.state.company.name)
     return (
       <div>
+        {this.props.loggedIn ?
         <div>
           <h5>{this.state.company.name}</h5>
           <p>{this.state.company.description}</p>
@@ -34,6 +36,7 @@ class Company extends Component {
             ))}
           </div>
         </div>
+        : <Redirect to="/login" />}
       </div>
     );
   }

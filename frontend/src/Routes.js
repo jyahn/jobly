@@ -14,12 +14,26 @@ class Routes extends Component {
     return (
       <Switch>
         <Route exact path='/' render={() => <Home />} />
-        <Route exact path='/companies/:company' render={rtProps => <Company {...rtProps} />} />
-        <Route exact path='/companies/' render={() => <Companies />} />
-        <Route exact path='/jobs/' render={() => <Jobs />} />
-        <Route exact path='/profile/' render={() => <Profile />} />
-        <Route exact path='/login/' render={() => <Login changeLoginState={this.props.changeLoginState} />} />
-        <Route exact path='/logout/' render={() => <Logout changeLoginState={this.props.changeLoginState} />} />
+        <Route exact path='/companies/:company'
+          render={rtProps => <Company
+            {...rtProps}
+            loggedIn={this.props.loggedIn} />} />
+        <Route exact path='/companies/'
+          render={() => <Companies loggedIn={this.props.loggedIn} />} />
+        <Route exact path='/jobs/'
+          render={() => <Jobs loggedIn={this.props.loggedIn} />} />
+        <Route exact path='/profile/'
+          render={() => <Profile
+            loggedIn={this.props.loggedIn}
+            currentUser = {this.props.currentUser} />} />
+        <Route exact path='/login/'
+          render={() => <Login
+            loggedIn={this.props.loggedIn}
+            changeLoginState={this.props.changeLoginState} />} />
+        <Route exact path='/logout/'
+          render={() => <Logout
+            loggedIn={this.props.loggedIn}
+            changeLoginState={this.props.changeLoginState} />} />
       </Switch>
     );
   }

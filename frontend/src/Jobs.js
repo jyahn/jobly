@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
+import { Redirect } from 'react-router-dom';
+
 
 class Jobs extends Component {
   constructor(props) {
@@ -21,11 +23,13 @@ class Jobs extends Component {
     console.log(this.state)
     return (
       <div className="col-md-10 offset-md-1">
-        <div className="CardList">
-          {this.state.jobs.map((job) => (
-            <JobCard job={job} />
-          ))}
-        </div>
+        {this.props.loggedIn ?
+          <div className="CardList">
+            {this.state.jobs.map((job) => (
+              <JobCard job={job} />
+            ))}
+          </div>
+          : <Redirect to="/login" />}
       </div>
     );
   }
