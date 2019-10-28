@@ -9,7 +9,7 @@ class Job {
   /** Find all jobs (can filter on terms in data). */
 
   static async findAll(data, username) {
-    console.log(data);
+    console.log("PLEASE", data);
     let baseQuery = `
       SELECT id, title, company_handle, salary, equity, a.state 
       FROM jobs 
@@ -20,11 +20,12 @@ class Job {
     // For each possible search term, add to whereExpressions and
     // queryValues so we can generate the right SQL
 
-    if (data.min_salary) {
-      queryValues.push(+data.min_employees);
-      whereExpressions.push(`min_salary >= $${queryValues.length}`);
+    if (data.salary) {
+      console.log("sUp35")
+      queryValues.push(`${data.salary}`);
+      whereExpressions.push(`salary >= $${queryValues.length}`);
     }
-
+    
     if (data.max_equity) {
       queryValues.push(+data.max_employees);
       whereExpressions.push(`min_equity >= $${queryValues.length}`);

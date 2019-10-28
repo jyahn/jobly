@@ -15,6 +15,7 @@ const { jobNewSchema, jobUpdateSchema } = require("../schemas");
 
 router.get("/", authRequired, async function(req, res, next) {
   try {
+    console.log("What im looking for", req.query)
     const jobs = await Job.findAll(req.query, req.username);
     return res.json({jobs});
   }

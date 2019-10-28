@@ -9,6 +9,7 @@ class Company {
   /** Find all companies (can filter on terms in data). */
 
   static async findAll(data) {
+    console.log("COMEON", data)
     let baseQuery = `SELECT handle, name, description, logo_url FROM companies`;
     let whereExpressions = [];
     let queryValues = [];
