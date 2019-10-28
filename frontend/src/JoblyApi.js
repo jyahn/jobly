@@ -29,17 +29,33 @@ class JoblyApi {
   }
 
   static async getCompanies() {
+    console.log("asdfasdfasdf")
     let res = await this.request('companies');
     return res.companies;
   }
 
-  static async getCompaniesSearch(search) {
+  static async getCompaniesBySearch(search) {
+    console.log("SEARCH IS", search)
     let res = await this.request('companies', search);
     return res.companies;
   }
 
   static async getJobs() {
     let res = await this.request('jobs');
+    return res.jobs;
+  }
+
+  static async getJobsByMinSalary(min_salary) {
+    console.log("min_salary IS", min_salary)
+    let res = await this.request('jobs', min_salary);
+    console.log("RESS", res)
+    return res.jobs;
+  }
+
+  static async getJobsBySearch(search) {
+    console.log("search is ", search)
+    let res = await this.request('jobs', search);
+    console.log("RESS", res)
     return res.jobs;
   }
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import JoblyApi from "./JoblyApi"
 import JobCard from "./JobCard";
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 class Company extends Component {
@@ -23,20 +23,19 @@ class Company extends Component {
 
   render() {
     console.log(this.state.company);
-    console.log("YA", this.state.company.name)
     return (
       <div>
         {this.props.loggedIn ?
-        <div>
-          <h5>{this.state.company.name}</h5>
-          <p>{this.state.company.description}</p>
           <div>
-            {this.state.company.jobs.map((job) => (
-              <JobCard job={job} />
-            ))}
+            <h5>{this.state.company.name}</h5>
+            <p>{this.state.company.description}</p>
+            <div>
+              {this.state.company.jobs.map((job) => (
+                <JobCard job={job} />
+              ))}
+            </div>
           </div>
-        </div>
-        : <Redirect to="/login" />}
+          : <Redirect to="/login" />}
       </div>
     );
   }

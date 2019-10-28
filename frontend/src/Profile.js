@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
+
+
 class Profile extends Component {
   constructor(props) {
     super(props);
-    console.log("WTF", this.props.currentUser)
     this.state = {
       firstName: this.props.currentUser.first_name,
       lastName: this.props.currentUser.last_name,
@@ -13,12 +14,9 @@ class Profile extends Component {
     }
   }
   render() {
-    console.log("props in profile", this.props)
-    console.log("currentuser in profile", this.props.currentUser)
-    console.log("state in profile", this.state)
     return (
-      <div className="col-md-6 col-lg-4 offset-md-3 offset lg-4">
-        <h3>User Profile</h3>
+      <div className="col-md-6 offset-md-3 offset" style = {{opacity: "0.5"}}>
+        <h3 className="text-info" style={{ textAlign: "center", marginTop: "20px", marginBottom: "20px" }}>User Profile</h3>
         <div className="card">
           <div className="card-body">
             <form>
@@ -61,7 +59,7 @@ class Profile extends Component {
                   value={this.state.password}
                 />
               </div>
-              <button className="btn btn-primary btn-block mt-4">Save Changes</button>
+              <button className="btn btn-info btn-block mt-4">Save Changes</button>
             </form>
           </div>
         </div>
