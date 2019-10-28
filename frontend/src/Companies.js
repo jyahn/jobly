@@ -43,13 +43,13 @@ class Companies extends Component {
       <div className="Companies">
         <div className="Companies-content">
           <div className="Companies-search text-center col-4 offset-4 mt-3">
-            <form className="form-group" onSubmit={this.handleSubmit}>
+            <form className="form-group" onSubmit={this.handleSearchSubmit}>
               <Input
                 type="text"
                 value={this.state.search}
                 name="search"
                 placeholder="Enter search term.."
-                onChange={this.handleChange}
+                onChange={this.handleSearchChange}
                 className="Companies-input"
               />
               <Button className="Jobs-search-button btn btn-success btn-md mt-3">Search</Button>

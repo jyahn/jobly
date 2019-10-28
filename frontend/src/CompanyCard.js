@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 class CompanyCard extends Component {
   render() {
+    console.log("companycard props", this.props)
     return (
       <div className="row CompanyCard">
         <div className="col-md-2 CompanyCard-logo-container">
@@ -13,8 +14,8 @@ class CompanyCard extends Component {
             alt="Company" />
         </div>
         <div className="col-md-9">
-          <div className="CompanyCard-name">{this.props.company.name}</div>
-          <div className="CompanyCard-desc">{this.props.company.description}</div>
+          <div className="CompanyCard-name"><h5><strong>{this.props.company.name}</strong></h5></div>
+          <div className="CompanyCard-desc"><h7>{this.props.company.description}</h7></div>
         </div>
       </div>
     )
@@ -35,3 +36,4 @@ export default CompanyCard;
 //     </div>
 //   </Link>
 // );
+
