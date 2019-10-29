@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.5
--- Dumped by pg_dump version 10.5
+-- Dumped from database version 11.5
+-- Dumped by pg_dump version 11.5
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -12,29 +12,16 @@ SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
-
---
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
---
-
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
-
---
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: applications; Type: TABLE; Schema: public; Owner: joel
+-- Name: applications; Type: TABLE; Schema: public; Owner: jy
 --
 
 CREATE TABLE public.applications (
@@ -45,10 +32,10 @@ CREATE TABLE public.applications (
 );
 
 
-ALTER TABLE public.applications OWNER TO joel;
+ALTER TABLE public.applications OWNER TO jy;
 
 --
--- Name: companies; Type: TABLE; Schema: public; Owner: joel
+-- Name: companies; Type: TABLE; Schema: public; Owner: jy
 --
 
 CREATE TABLE public.companies (
@@ -60,10 +47,10 @@ CREATE TABLE public.companies (
 );
 
 
-ALTER TABLE public.companies OWNER TO joel;
+ALTER TABLE public.companies OWNER TO jy;
 
 --
--- Name: jobs; Type: TABLE; Schema: public; Owner: joel
+-- Name: jobs; Type: TABLE; Schema: public; Owner: jy
 --
 
 CREATE TABLE public.jobs (
@@ -76,10 +63,10 @@ CREATE TABLE public.jobs (
 );
 
 
-ALTER TABLE public.jobs OWNER TO joel;
+ALTER TABLE public.jobs OWNER TO jy;
 
 --
--- Name: jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: joel
+-- Name: jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: jy
 --
 
 CREATE SEQUENCE public.jobs_id_seq
@@ -91,17 +78,17 @@ CREATE SEQUENCE public.jobs_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.jobs_id_seq OWNER TO joel;
+ALTER TABLE public.jobs_id_seq OWNER TO jy;
 
 --
--- Name: jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joel
+-- Name: jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jy
 --
 
 ALTER SEQUENCE public.jobs_id_seq OWNED BY public.jobs.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: joel
+-- Name: users; Type: TABLE; Schema: public; Owner: jy
 --
 
 CREATE TABLE public.users (
@@ -115,17 +102,17 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO joel;
+ALTER TABLE public.users OWNER TO jy;
 
 --
--- Name: jobs id; Type: DEFAULT; Schema: public; Owner: joel
+-- Name: jobs id; Type: DEFAULT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.jobs ALTER COLUMN id SET DEFAULT nextval('public.jobs_id_seq'::regclass);
 
 
 --
--- Data for Name: applications; Type: TABLE DATA; Schema: public; Owner: joel
+-- Data for Name: applications; Type: TABLE DATA; Schema: public; Owner: jy
 --
 
 COPY public.applications (username, job_id, state, created_at) FROM stdin;
@@ -133,65 +120,65 @@ COPY public.applications (username, job_id, state, created_at) FROM stdin;
 
 
 --
--- Data for Name: companies; Type: TABLE DATA; Schema: public; Owner: joel
+-- Data for Name: companies; Type: TABLE DATA; Schema: public; Owner: jy
 --
 
 COPY public.companies (handle, name, num_employees, description, logo_url) FROM stdin;
 edwards-lee-and-reese	Edwards, Lee and Reese	744	To much recent it reality coach decision Mr. Dog language evidence minute either deep situation pattern. Other cold bad loss surface real show.	http://cdn1.iconfinder.com/data/icons/cryptocurrency-set-2018/375/Asset_1560-64.png
 sellers-bryant	Sellers-Bryant	369	Language discussion mission soon wait according executive. Financial say husband anyone money politics. Dinner action purpose mouth environment I white.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-93-64.png
-bauer-gallagher	Bauer-Gallagher	862	Difficult ready trip question produce produce someone.  http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-07-64.png
-arnold-berger-and-townsend	Arnold, Berger and Townsend	795	Kind crime at perhaps beat. Enjoy deal purpose serve begin or thought. Congress everything miss tend.   http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Cloud_Management-64.png
-miller-woods-and-hernandez	Miller, Woods and Hernandez	444	Including theory protect reveal energy himself probably. Test leave mother area however.    http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-63-64.png
-davis-davis	Davis-Davis	23	Career participant difficult. Decide claim particular century society. Question growth two staff.   http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Data_Work-64.png
-jackson-and-sons	Jackson and Sons	649	President couple political sit create.  http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-62-64.png
-smith-llc	Smith LLC	908	Statement use per mission method. Order truth method.   http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Mobile_Seo-64.png
-humphrey-llc	Humphrey LLC	678	Agent actually able paper nor. Tell then court full agree without assume.   http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-92-64.png
-salas-group	Salas Group	624	Central whom mouth partner bring newspaper special city. Show second cost newspaper can early play. http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-16-64.png
-morgan-sullivan	Morgan-Sullivan	409	Own once artist part put authority wait. Focus free even. Why friend civil visit.   http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-58-64.png
-perez-miller	Perez-Miller	298	Space one approach wife son. Themselves give necessary follow employee return feel. Step animal doctor sign water early.    http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-03-64.png
-carr-wells-and-jones	Carr, Wells and Jones	27	Human medical throw book pick possible. Maybe yeah word beat treatment impact campaign. http://cdn1.iconfinder.com/data/icons/office-icons-17/512/ilustracoes_04-07-64.png
-thomas-and-sons	Thomas and Sons	51	Book detail scene continue. Art strategy because list two.  http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-41-64.png
-mitchell-brown	Mitchell-Brown	288	Republican truth church generation voice price issue.   http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-85-64.png
-watson-davis	Watson-Davis	819	Year join loss. http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Digital_Coin-64.png
-logan-miller	Logan-Miller	429	Pattern hand where never. Social across ability which structure.    http://www.gtdesigns.it/wp-content/uploads/OverusedLogos/99gen_circle.jpg
+miller-woods-and-hernandez	Miller, Woods and Hernandez	444	Including theory protect reveal energy himself probably. Test leave mother area however.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-63-64.png
+davis-davis	Davis-Davis	23	Career participant difficult. Decide claim particular century society. Question growth two staff.	http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Data_Work-64.png
+morgan-sullivan	Morgan-Sullivan	409	Own once artist part put authority wait. Focus free even. Why friend civil visit.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-58-64.png
+carr-wells-and-jones	Carr, Wells and Jones	27	Human medical throw book pick possible. Maybe yeah word beat treatment impact campaign.	http://cdn1.iconfinder.com/data/icons/office-icons-17/512/ilustracoes_04-07-64.png
 taylor-yu-and-lee	Taylor, Yu and Lee	226	Down bag serve. Officer season company.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-72-64.png
-hudson-inc	Hudson Inc	627	End now meet staff. Long government force why bar. Provide bring hope staff almost many be a.   http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-34-64.png
-mejia-scott-and-ryan	Mejia, Scott and Ryan	628	General traditional late situation discussion dog. Before best up strategy about direction. http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-31-64.png
 scott-smith	Scott-Smith	993	Room newspaper foot. Student daughter their themselves top almost near. Wait time recently it street follow medical nothing.	http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Green_Work-64.png
-norman-harvey	Norman-Harvey	837	Drop along test material education. Opportunity forget campaign federal certainly total hair.   http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-65-64.png
 hall-mills	Hall-Mills	266	Change stage tell note hundred. Worry where program wait.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-76-64.png
 gillespie-smith	Gillespie-Smith	302	Candidate ability democratic make drug. Player themselves like front. Over through style loss win very when.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-30-64.png
-boyd-evans	Boyd-Evans	698	Build respond generation tree. No five keep. Happy medical back fine focus suffer modern.   Build respond generation tree. No five keep. Happy medical back fine focus suffer modern.   http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-83-64.png
-martinez-daniels	Martinez-Daniels	12	Five source market nation. Drop foreign raise pass. http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-69-64.png
+boyd-evans	Boyd-Evans	698	Build respond generation tree. No five keep. Happy medical back fine focus suffer modern.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-83-64.png
 willis-henson-and-miller	Willis, Henson and Miller	821	About dream practice. Father significant senior health within four.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-03-64.png
 wiggins-frederick-and-boyer	Wiggins, Frederick and Boyer	298	Institution structure say argue bit. Each option high executive easy pattern. Majority white hour there reach drive produce.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-64-64.png
 stone-stewart	Stone-Stewart	459	Require successful family but. Traditional article late eight lose common send budget. Better opportunity law country various represent strong probably.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-02-64.png
 mueller-moore	Mueller-Moore	932	Edge may report though least pressure likely. Cost short appear program hair seven.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-14-64.png
 rivas-llc	Rivas LLC	552	Would road lot research wide mouth. Resource along office drug.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-91-64.png
-garner-michael	Garner-Michael	940	Necessary thousand parent since discuss director. Visit machine skill five the. http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-66-64.png
 owen-newton	Owen-Newton	953	Red compare try way. Bed standard again number wrong force. Stop exactly agent product economy someone. North describe site manager employee customer.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-57-64.png
-jackson-davila-and-conley	Jackson, Davila and Conley	813	Consider with build either. http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-74-64.png
-robbins-marsh-and-martin	Robbins, Marsh and Martin	709	Now never worry usually another ability concern hair. Fly lot six protect participant. Teach through head.  http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-40-64.png
 garcia-ray	Garcia-Ray	217	Laugh low follow fear. Politics main size fine.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-37-64.png
-baker-santos	Baker-Santos	225	Compare certain use. Writer time lay word garden. Resource task interesting voice. http://cdn2.iconfinder.com/data/icons/file-8/128/file_Doc_download-64.png
-ingram-ferguson-and-rubio	Ingram, Ferguson and Rubio	753	Human summer field mean impact could exactly. Business read north project will. Left dream use Democrat.    http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-15-64.png
-burton-ltd	Burton Ltd	610	Cover couple speech bar cell measure movement finally. Nation pull inside.  http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-33-64.png
-anderson-arias-and-morrow   Anderson, Arias and Morrow	245	Somebody program how I face give away discussion view act inside. Your official relationship administration here. http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-96-64.png
 foster-rice	Foster-Rice	901	Either relate himself. Source TV data one general. Actually than seat eight.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-79-64.png
-weber-hernandez	Weber-Hernandez	681	Contain product south picture scientist.    http://cdn2.iconfinder.com/data/icons/social-media-2212/150/Untitled-3-06-64.png
-moore-plc	Moore PLC	100	Magazine thing eight shake window might they organization. Environmental it bag green.  http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-09-64.png
-ayala-buchanan	Ayala-Buchanan	309	Make radio physical southern. His white on attention kitchen market upon. Represent west open seven. Particularly subject billion much score thank bag somebody. http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-99-64.png
+arnold-berger-and-townsend	Arnold, Berger and Townsend	795	Kind crime at perhaps beat. Enjoy deal purpose serve begin or thought. Congress everything miss tend.	http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Cloud_Management-64.png
+bauer-gallagher	Bauer-Gallagher	862	Difficult ready trip question produce produce someone.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-07-64.png
+burton-ltd	Burton Ltd	610	Cover couple speech bar cell measure movement finally. Nation pull inside.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-33-64.png
+hudson-inc	Hudson Inc	627	End now meet staff. Long government force why bar. Provide bring hope staff almost many be a.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-34-64.png
+ingram-ferguson-and-rubio	Ingram, Ferguson and Rubio	753	Human summer field mean impact could exactly. Business read north project will. Left dream use Democrat.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-15-64.png
+jackson-and-sons	Jackson and Sons	649	President couple political sit create.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-62-64.png
+martinez-daniels	Martinez-Daniels	12	Five source market nation. Drop foreign raise pass.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-69-64.png
+mejia-scott-and-ryan	Mejia, Scott and Ryan	628	General traditional late situation discussion dog. Before best up strategy about direction.	http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-31-64.png
+norman-harvey	Norman-Harvey	837	Drop along test material education. Opportunity forget campaign federal certainly total hair.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-65-64.png
+robbins-marsh-and-martin	Robbins, Marsh and Martin	709	Now never worry usually another ability concern hair. Fly lot six protect participant. Teach through head.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-40-64.png
+salas-group	Salas Group	624	Central whom mouth partner bring newspaper special city. Show second cost newspaper can early play.	http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-16-64.png
+smith-llc	Smith LLC	908	Statement use per mission method. Order truth method.	http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Mobile_Seo-64.png
+watson-davis	Watson-Davis	819	Year join loss.	http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Digital_Coin-64.png
+ayala-buchanan	Ayala-Buchanan	309	Make radio physical southern. His white on attention kitchen market upon. Represent west open seven. Particularly subject billion much score thank bag somebody.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-99-64.png
 russo-gillespie-and-conrad	Russo, Gillespie and Conrad	398	South sound knowledge guy. Up I size anyone issue drop. Agent light significant mouth while.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-97-64.png
 reynolds-greene	Reynolds-Greene	343	Effect win area officer office economy. Congress travel would resource difficult. Nice president mind dinner.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-49-64.png
-hall-davis	Hall-Davis	749	Adult go economic off into. Suddenly happy according only common. Father plant wrong free traditional.  http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-19-64.png	
 pugh-ltd	Pugh Ltd	87	Believe reflect perform TV son.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-94-64.png
-graham-herring-and-lane	Graham, Herring and Lane	188	Enough attack return. Fall gas someone her another point those. Star public painting show concern.  http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Infographic_Management-64.png
-erickson-inc	Erickson Inc	267	Interesting environment owner beautiful school politics. General friend hair player dinner last administration teacher. http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-50-64.png
+anderson-arias-and-morrow	Anderson, Arias and Morrow	245	Somebody program how I. Face give away discussion view act inside. Your official relationship administration here.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-96-64.png
+baker-santos	Baker-Santos	225	Compare certain use. Writer time lay word garden. Resource task interesting voice.	http://cdn2.iconfinder.com/data/icons/file-8/128/file_Doc_download-64.png
+erickson-inc	Erickson Inc	267	Interesting environment owner beautiful school politics. General friend hair player dinner last administration teacher.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-50-64.png
+garner-michael	Garner-Michael	940	Necessary thousand parent since discuss director. Visit machine skill five the.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-66-64.png
+graham-herring-and-lane	Graham, Herring and Lane	188	Enough attack return. Fall gas someone her another point those. Star public painting show concern.	http://cdn2.iconfinder.com/data/icons/seo-isometric-2/512/Infographic_Management-64.png
+hall-davis	Hall-Davis	749	Adult go economic off into. Suddenly happy according only common. Father plant wrong free traditional.	http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-19-64.png
+humphrey-llc	Humphrey LLC	678	Agent actually able paper nor. Tell then court full agree without assume.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-92-64.png
+jackson-davila-and-conley	Jackson, Davila and Conley	813	Consider with build either.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-74-64.png
+mitchell-brown	Mitchell-Brown	288	Republican truth church generation voice price issue.	http://cdn1.iconfinder.com/data/icons/business-finance-vol-2-50/40/Untitled-5-85-64.png
+moore-plc	Moore PLC	100	Magazine thing eight shake window might they organization. Environmental it bag green.	http://cdn2.iconfinder.com/data/icons/school-education-32/70/Untitled-1-09-64.png
+perez-miller	Perez-Miller	298	Space one approach wife son. Themselves give necessary follow employee return feel. Step animal doctor sign water early.	http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-03-64.png
+thomas-and-sons	Thomas and Sons	51	Book detail scene continue. Art strategy because list two.	http://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-41-64.png
+weber-hernandez	Weber-Hernandez	681	Contain product south picture scientist.	http://cdn2.iconfinder.com/data/icons/social-media-2212/150/Untitled-3-06-64.png
+logan-miller	Logan-Miller	429	Pattern hand where never. Social across ability which structure.	https://cdn2.iconfinder.com/data/icons/business-finance-vol-1-53/30/Untitled-1-38-64.png
 \.
 
 
 --
--- Data for Name: jobs; Type: TABLE DATA; Schema: public; Owner: joel
+-- Data for Name: jobs; Type: TABLE DATA; Schema: public; Owner: jy
 --
 
 COPY public.jobs (id, title, salary, equity, company_handle) FROM stdin;
@@ -246,7 +233,7 @@ COPY public.jobs (id, title, salary, equity, company_handle) FROM stdin;
 49	Conservator, furniture	110000	0.119999999999999996	watson-davis
 50	Air cabin crew	105000	0.0599999999999999978	ingram-ferguson-and-rubio
 51	Financial trader	153000	0.0599999999999999978	garner-michael
-52	Nurse, childrens	162000	0.149999999999999994	humphrey-llc
+52	Nurse, children's	162000	0.149999999999999994	humphrey-llc
 53	Information officer	200000	0.130000000000000004	hall-mills
 54	Paramedic	122000	0.119999999999999996	baker-santos
 55	Consulting civil engineer	60000	0.0599999999999999978	sellers-bryant
@@ -399,7 +386,7 @@ COPY public.jobs (id, title, salary, equity, company_handle) FROM stdin;
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: joel
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: jy
 --
 
 COPY public.users (username, password, first_name, last_name, email, photo_url, is_admin) FROM stdin;
@@ -408,14 +395,14 @@ testuser	$2b$10$REv6t9K7EHqWCc76/SI37ODRvFfW/sPMflZpG9r4EdZPQt4QwwMf2	Joel	Burto
 
 
 --
--- Name: jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joel
+-- Name: jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jy
 --
 
 SELECT pg_catalog.setval('public.jobs_id_seq', 2, true);
 
 
 --
--- Name: applications applications_pkey; Type: CONSTRAINT; Schema: public; Owner: joel
+-- Name: applications applications_pkey; Type: CONSTRAINT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.applications
@@ -423,7 +410,7 @@ ALTER TABLE ONLY public.applications
 
 
 --
--- Name: companies companies_name_key; Type: CONSTRAINT; Schema: public; Owner: joel
+-- Name: companies companies_name_key; Type: CONSTRAINT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.companies
@@ -431,7 +418,7 @@ ALTER TABLE ONLY public.companies
 
 
 --
--- Name: companies companies_pkey; Type: CONSTRAINT; Schema: public; Owner: joel
+-- Name: companies companies_pkey; Type: CONSTRAINT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.companies
@@ -439,7 +426,7 @@ ALTER TABLE ONLY public.companies
 
 
 --
--- Name: jobs jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: joel
+-- Name: jobs jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.jobs
@@ -447,7 +434,7 @@ ALTER TABLE ONLY public.jobs
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: joel
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.users
@@ -455,7 +442,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: applications applications_job_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: joel
+-- Name: applications applications_job_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.applications
@@ -463,7 +450,7 @@ ALTER TABLE ONLY public.applications
 
 
 --
--- Name: applications applications_username_fkey; Type: FK CONSTRAINT; Schema: public; Owner: joel
+-- Name: applications applications_username_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.applications
@@ -471,7 +458,7 @@ ALTER TABLE ONLY public.applications
 
 
 --
--- Name: jobs jobs_company_handle_fkey; Type: FK CONSTRAINT; Schema: public; Owner: joel
+-- Name: jobs jobs_company_handle_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jy
 --
 
 ALTER TABLE ONLY public.jobs
