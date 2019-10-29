@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import './Profile.css'
 
 
 class Profile extends Component {
@@ -15,10 +15,10 @@ class Profile extends Component {
   }
   render() {
     return (
-      <div className="col-md-6 offset-md-3 offset" style = {{opacity: "0.5"}}>
-        <h3 className="text-info" style={{ textAlign: "center", marginTop: "20px", marginBottom: "20px" }}>User Profile</h3>
-        <div className="card">
+      <div className="Profile-container col-lg-4 col-md-6 offset-4" style={{ opacity: "0." }}>
+        <div className="Profile card">
           <div className="card-body">
+            <h3 className="text-success" style={{ textAlign: "center", marginTop: "20px", marginBottom: "20px" }}>User Profile</h3>
             <form>
               <div className="form-group">
                 <label>Username</label>
@@ -59,7 +59,9 @@ class Profile extends Component {
                   value={this.state.password}
                 />
               </div>
-              <button className="btn btn-info btn-block mt-4">Save Changes</button>
+              <div className = "Profile-btn text-center">
+              <button className="btn btn-success m-*-auto btn-md mt-4">Save Changes</button>
+              </div>
             </form>
           </div>
         </div>

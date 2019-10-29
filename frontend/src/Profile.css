@@ -1,0 +1,14 @@
+.Profile {
+    margin:0 auto;
+    margin-top: 15%;
+    /* border: 0.7px solid #a0a0a094; */
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    /* box-shadow: 20px 60px 20px 20px rgba(15, 10, 10, 0.63); */
+    border-radius: 15px;
+ }
+
+ 
+ .form-group > label {
+   font-size: 17px;
+   color: black;
+ }
