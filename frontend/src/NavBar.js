@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
-import './Navbar.css'
+import './NavBar.css'
 
 
 class NavBar extends Component {
@@ -8,9 +8,9 @@ class NavBar extends Component {
     console.log("props in nav", this.props)
     return (
       this.props.loggedIn ?
-        <nav className="navbar navbar-expand-md bg-info" style={{ borderBottom: "3px solid #de835b" }}>
+        <nav className="Navbar navbar navbar-expand-md" style={{ borderBottom: "4px solid #28a745" }}>
           <NavLink className="nav-link navbar-brand navItem" style={{ color: "white" }} exact to='/'>Jobly</NavLink>
-          <ul className="navbar navbar-nav ml-auto bg-info">
+          <ul className="navbar-nav ml-auto">
             <li className="nav-item mr-4"><NavLink className="nav-link navItem" style={{ color: "white" }} exact to='/companies'>Companies</NavLink></li>
             <li className="nav-item mr-4"><NavLink className="nav-link navItem" style={{ color: "white" }} exact to='/jobs'>Jobs</NavLink></li>
             <li className="nav-item mr-4"><NavLink className="nav-link navItem" style={{ color: "white" }} exact to='/profile'>Profile</NavLink></li>

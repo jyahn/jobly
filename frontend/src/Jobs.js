@@ -61,7 +61,7 @@ class Jobs extends Component {
             <form
               className="Jobs-searchForm form-group"
               onSubmit={this.handleSearchSubmit}>
-              <Input
+              <input
                 className="Jobs-input form-control"
                 type="text"
                 value={this.state.search}
@@ -69,7 +69,7 @@ class Jobs extends Component {
                 placeholder="Enter search term.."
                 onChange={this.handleChange}
               />
-              <Button className="Jobs-search-button btn btn-success btn-md mt-3">Search</Button>
+              <button className="Jobs-search-button btn btn-success btn-md mt-3">Search</button>
             </form>
           </div>
 

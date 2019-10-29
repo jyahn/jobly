@@ -14,12 +14,12 @@ class Routes extends Component {
     return (
       <Switch>
         <Route exact path='/' render={() => <Home />} />
+        <Route exact path='/companies/'
+          render={() => <Companies loggedIn={this.props.loggedIn} />} />
         <Route exact path='/companies/:company'
           render={rtProps => <Company
             {...rtProps}
             loggedIn={this.props.loggedIn} />} />
-        <Route exact path='/companies/'
-          render={() => <Companies loggedIn={this.props.loggedIn} />} />
         <Route exact path='/jobs/'
           render={() => <Jobs loggedIn={this.props.loggedIn} />} />
         <Route exact path='/profile/'

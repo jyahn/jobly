@@ -29,7 +29,7 @@ class Company extends Component {
         {this.props.loggedIn ?
           <div>
             <div className="Company-nd">
-              <h3><strong>{this.state.company.name}</strong></h3>
+              <h1 className="Company-name"><strong>{this.state.company.name}</strong></h1>
               <h7>{this.state.company.description}</h7>
             </div>
             <div className="row">

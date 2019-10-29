@@ -11,7 +11,7 @@ class JobCard extends Component {
 
       <div className="JobCard card mb-4">
         <div className="JobCard-title card-header">
-          <h5>{this.props.job.title}</h5>
+          <h5><strong>{this.props.job.title}</strong></h5>
         </div>
         <div className="JobCard-se card-body">
           <p className="JobCard-salary" >
@@ -21,8 +21,8 @@ class JobCard extends Component {
             <span className="JobCard-eqy"> EQT</span>
           </p>
         </div>
-        <div className ="JobCard-btn">
-        <Button className="JobCard-button btn btn-success btn-sm mb-2">Apply</Button>
+        <div className="JobCard-btn">
+          <Button className="JobCard-button btn btn-success btn-sm mb-2">Apply</Button>
         </div>
       </div>
     )
