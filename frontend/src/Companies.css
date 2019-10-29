@@ -1,4 +1,4 @@
-.Companies-link:hover {
+/* .Companies-link:hover {
     text-decoration: none;
   }
   
@@ -69,4 +69,20 @@
     margin-top: 100px;
     min-height: 100vh;
     height: 100%;
-  }
+  } */
+
+/* .Companies-list-item {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+} */
+
+
+.Companies-list-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+.Companies-list-item:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.20);
+}

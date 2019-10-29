@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import JoblyApi from "./JoblyApi"
 import JobCard from "./JobCard";
 import { Redirect } from 'react-router-dom';
+import './Company.css'
 
 
 class Company extends Component {
@@ -27,11 +28,15 @@ class Company extends Component {
       <div>
         {this.props.loggedIn ?
           <div>
-            <h5>{this.state.company.name}</h5>
-            <p>{this.state.company.description}</p>
-            <div>
+            <div className="Company-nd">
+              <h3><strong>{this.state.company.name}</strong></h3>
+              <h7>{this.state.company.description}</h7>
+            </div>
+            <div className="row">
               {this.state.company.jobs.map((job) => (
-                <JobCard job={job} />
+                <div className="Jobs-item col-lg-4 col-md-6 mt-3 px-5 text-center">
+                  <JobCard job={job} />
+                </div>
               ))}
             </div>
           </div>

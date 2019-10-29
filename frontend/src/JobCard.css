@@ -1,7 +1,16 @@
 .JobCard {
   text-align: center;
+  border-radius: 15px;
 }
   
 .JobCard-button {
   width: 100px !important;
+}
+
+/* .JobCard-se {
+  color: #007bff;
+} */
+
+.JobCard-title {
+  color: #007bff;
 }

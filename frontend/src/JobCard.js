@@ -10,7 +10,7 @@ class JobCard extends Component {
     return (
 
       <div className="JobCard card mb-4">
-        <div className="card-header">
+        <div className="JobCard-title card-header">
           <h5>{this.props.job.title}</h5>
         </div>
         <div className="JobCard-se card-body">

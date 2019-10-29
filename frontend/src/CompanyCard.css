@@ -1,20 +1,8 @@
-.CompanyCard-logo {
-  width: 75px;
-}
-.CompanyCard-logo-container {
-  margin: auto;
-}
+/* .CompanyCard {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+} */
 
 .CompanyCard-desc {
-  height: 100px;
-  margin-top: 10px;
-  text-align: left;
-  text-indent: 20px;
-  color: #5addd4;
+  color: black;
 }
-
-.CompanyCard-name {
-  font-size: 20px;
-  color: #66fcf1;
-}
-

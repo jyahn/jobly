@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
 import { Redirect } from 'react-router-dom';
-import './Jobs.css'
 import { Button, Input } from 'reactstrap';
+import './Jobs.css'
 
 
 class Jobs extends Component {
@@ -106,10 +106,10 @@ class Jobs extends Component {
           </div>
 
           {this.state.jobs.length ? (
-            <div className="row">
+            <div className="Jobs-container row ml-5 mr-5">
               {this.state.jobs.map(job => (
                 //mb-3 sets the margin-bottom spacing
-                <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-5">
+                <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-3">
                   <JobCard job={job} handleClick={this.handleClick} />
                 </div>
               ))}

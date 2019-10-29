@@ -3,7 +3,7 @@ import JoblyApi from "./JoblyApi"
 import CompanyCard from './CompanyCard'
 import { ListGroup, ListGroupItem, Button, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
-// import './Companies.css';
+import './Companies.css';
 
 class Companies extends Component {
   constructor(props) {
