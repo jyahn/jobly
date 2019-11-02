@@ -26,7 +26,7 @@ class Login extends Component {
     evt.preventDefault();
     if (this.state.showSignUp === false) {
       let token = await JoblyApi.login({ username: this.state.username, password: this.state.password })
-      console.log(token)
+      // console.log(token)
       this.props.changeLoginState()
       localStorage.setItem("_token", token)
       localStorage.setItem("username", this.state.username)

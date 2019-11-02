@@ -14,6 +14,7 @@ class Profile extends Component {
     }
   }
   render() {
+    console.log(this.props)
     return (
       <div className="Profile-container col-lg-4 col-md-6 offset-4" style={{ opacity: "0." }}>
         <div className="Profile card">

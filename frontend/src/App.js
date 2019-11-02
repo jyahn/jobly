@@ -37,7 +37,7 @@ class App extends Component {
     })
   }
   render() {
-    console.log("state in app", this.state);
+    // console.log("state in app", this.state);
     return (
       <div>
         <BrowserRouter>

@@ -29,13 +29,11 @@ class JoblyApi {
   }
 
   static async getCompanies() {
-    console.log("asdfasdfasdf")
     let res = await this.request('companies');
     return res.companies;
   }
 
   static async getCompaniesBySearch(search) {
-    console.log("SEARCH IS", search)
     let res = await this.request('companies', search);
     return res.companies;
   }
@@ -46,16 +44,16 @@ class JoblyApi {
   }
 
   static async getJobsByMinSalary(min_salary) {
-    console.log("min_salary IS", min_salary)
+    // console.log("min_salary IS", min_salary)
     let res = await this.request('jobs', min_salary);
-    console.log("RESS", res)
+    // console.log("RESS", res)
     return res.jobs;
   }
 
   static async getJobsBySearch(search) {
-    console.log("search is ", search)
+    // console.log("search is ", search)
     let res = await this.request('jobs', search);
-    console.log("RESS", res)
+    // console.log("RESS", res)
     return res.jobs;
   }
 
@@ -66,13 +64,17 @@ class JoblyApi {
 
   static async getUser(username) {
     let res = await this.request(`users/${username}`);
-    console.log("WHATS RES", res)
+    // console.log("WHATS RES", res)
     return res.user
   }
 
   static async register(data) {
     let res = await this.request('users', data, "post");
     return res.token;
+  }
+
+  static async toggleJobApply() {
+
   }
 
 }

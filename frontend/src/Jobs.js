@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
-import { Redirect } from 'react-router-dom';
-import { Button, Input } from 'reactstrap';
+// import { Redirect } from 'react-router-dom';
+import { Input } from 'reactstrap';
 import './Jobs.css'
 
 
@@ -52,7 +52,6 @@ class Jobs extends Component {
   }
 
   render() {
-    console.log("state in JOBS", this.state)
     return (
 
       <div className="Jobs">
@@ -123,57 +122,3 @@ class Jobs extends Component {
 }
 
 export default Jobs;
-
-
-{/* <div className="Jobs">
-  <h3 className="text-info" style={{ textAlign: "center", position: "relative", marginTop: "20px", marginBottom: "20px" }}>Jobs</h3>
-  <div className="JobsContainer">
-
-    <div className="JobCards-Container">
-      {this.props.loggedIn ?
-        <div className="JobCards-List">
-          {this.state.jobs.map((job) => (
-            <JobCard job={job} />
-          ))}
-        </div>
-        : <Redirect to="/login" />}
-    </div>
-  </div >
-</div> */}
-
-
-
-
-{/* <div className="SalaryForm">
-  <form onSubmit={this.handleSubmit}>
-    <h6 className="text-info"><b>Salary estimate </b></h6>
-    <input
-      type="radio"
-      name="salaryFilter"
-      value="50000"
-      checked={this.state.salaryFilter === "50000"} onChange={this.handleChange} /> $50,000+ <br />
-    <input
-      type="radio"
-      name="salaryFilter"
-      value="75000"
-      checked={this.state.salaryFilter === "75000"} onChange={this.handleChange} /> $75,000+ <br />
-    <input
-      type="radio"
-      name="salaryFilter"
-      value="100000"
-      checked={this.state.salaryFilter === "100000"} onChange={this.handleChange} /> $100,000+ <br />
-    <input
-      type="radio"
-      name="salaryFilter"
-      value="125000"
-      checked={this.state.salaryFilter === "125000"} onChange={this.handleChange} /> $125,000+ <br />
-    <input
-      type="radio"
-      name="salaryFilter"
-      value="150000"
-      checked={this.state.salaryFilter === "150000"} onChange={this.handleChange} /> $150,000+ <br /> <br />
-    <button type="submit" className="btn btn-md btn-info" style={{ backgroundColor: "#de835b", borderColor: "#de835b" }}>Apply Filter</button>
-  </form>
-</div> */}
-
-

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Companies from './Companies';
 import Company from './Company';
@@ -25,7 +25,7 @@ class Routes extends Component {
         <Route exact path='/profile/'
           render={() => <Profile
             loggedIn={this.props.loggedIn}
-            currentUser = {this.props.currentUser} />} />
+            currentUser={this.props.currentUser} />} />
         <Route exact path='/login/'
           render={() => <Login
             loggedIn={this.props.loggedIn}

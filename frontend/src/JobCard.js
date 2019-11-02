@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import "./JobCard.css"
-import { Button, Input } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 
 class JobCard extends Component {
   render() {
-    // console.log("State in JOBCARD", this.props)
     return (
 
       <div className="JobCard card mb-4">
@@ -22,7 +21,9 @@ class JobCard extends Component {
           </p>
         </div>
         <div className="JobCard-btn">
-          <Button className="JobCard-button btn btn-success btn-sm mb-2">Apply</Button>
+          <Button
+            className="JobCard-button btn btn-success btn-sm mb-2"
+          >Apply</Button>
         </div>
       </div>
     )

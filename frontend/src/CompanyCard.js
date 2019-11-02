@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "./CompanyCard.css"
 
 class CompanyCard extends Component {
   render() {
-    console.log("companycard props", this.props)
     return (
       <div className="row CompanyCard">
         <div className="col-md-2 CompanyCard-logo-container">

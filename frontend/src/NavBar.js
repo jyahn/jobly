@@ -5,7 +5,6 @@ import './NavBar.css'
 
 class NavBar extends Component {
   render() {
-    console.log("props in nav", this.props)
     return (
       this.props.loggedIn ?
         <nav className="Navbar navbar navbar-expand-md" style={{ borderBottom: "4px solid #28a745" }}>
