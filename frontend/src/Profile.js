@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './Profile.css'
 
 
-class Profile extends Component {
+class Profile extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,9 +12,28 @@ class Profile extends Component {
       photoUrl: this.props.currentUser.photo_url,
       password: ""
     }
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(evt) {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
+  }
+
+
+
+  // async handleSubmit(evt) {
+  //   evt.preventDefault()
+  //   this.setState({
+  //     jobs
+  //   })
+  // }
+
+
   render() {
-    console.log(this.props)
+    console.log("props in profile", this.props)
+    console.log("state in profile", this.state)
     return (
       <div className="Profile-container col-lg-4 col-md-6 offset-4" style={{ opacity: "0." }}>
         <div className="Profile card">
@@ -30,6 +49,7 @@ class Profile extends Component {
                 <input className="form-control"
                   name="first_name"
                   value={this.state.firstName}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
@@ -37,6 +57,7 @@ class Profile extends Component {
                 <input className="form-control"
                   name="last_name"
                   value={this.state.lastName}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
@@ -44,6 +65,7 @@ class Profile extends Component {
                 <input className="form-control"
                   name="email"
                   value={this.state.email}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
@@ -51,6 +73,7 @@ class Profile extends Component {
                 <input className="form-control"
                   name="photo_url"
                   value={this.state.photoUrl}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
@@ -58,10 +81,11 @@ class Profile extends Component {
                 <input className="form-control"
                   name="password"
                   value={this.state.password}
+                  onChange={this.handleChange}
                 />
               </div>
-              <div className = "Profile-btn text-center">
-              <button className="btn btn-success m-*-auto btn-md mt-4">Save Changes</button>
+              <div className="Profile-btn text-center">
+                <button className="btn btn-success m-*-auto btn-md mt-4">Save Changes</button>
               </div>
             </form>
           </div>

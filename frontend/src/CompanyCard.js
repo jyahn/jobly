@@ -8,13 +8,13 @@ class CompanyCard extends Component {
       <div className="row CompanyCard">
         <div className="col-md-2 CompanyCard-logo-container">
           <img
-            classname="CompanyCard-logo"
+            className="CompanyCard-logo"
             src={this.props.company.logo_url}
             alt="Company" />
         </div>
         <div className="col-md-9">
           <div className="CompanyCard-name"><h5><strong>{this.props.company.name}</strong></h5></div>
-          <div className="CompanyCard-desc"><h7>{this.props.company.description}</h7></div>
+          <div className="CompanyCard-desc"><h6>{this.props.company.description}</h6></div>
         </div>
       </div>
     )

@@ -30,7 +30,7 @@ class Company extends Component {
           <div>
             <div className="Company-nd">
               <h1 className="Company-name"><strong>{this.state.company.name}</strong></h1>
-              <h7>{this.state.company.description}</h7>
+              <h6>{this.state.company.description}</h6>
             </div>
             <div className="row">
               {this.state.company.jobs.map((job) => (
