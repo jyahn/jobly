@@ -76,13 +76,23 @@
   border-radius: 5px;
 } */
 
-
 .Companies-list-item {
   margin-top: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.05);
   border-radius: 5px;
+  width: 650px;
 }
 .Companies-list-item:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.20);
+  background-color: #34ce57;
+  ;
+}
+
+.Companies-link:hover {
+  text-decoration: none;
+}
+
+.Companies-list-item {
+  height: 115px;
 }

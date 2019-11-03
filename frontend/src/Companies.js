@@ -64,7 +64,7 @@ class Companies extends Component {
                     key={company.handle}
                     to={`/companies/${company.handle}`}
                   >
-                    <ListGroupItem className="Companies-list-item col-md-6 offset-3">
+                    <ListGroupItem className="Companies-list-item">
                       <CompanyCard company={company} />
                     </ListGroupItem>
                   </Link>
