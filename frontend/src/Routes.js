@@ -9,7 +9,7 @@ import Login from './Login';
 import Logout from './Logout';
 
 
-class Routes extends Component {
+class Routes extends React.PureComponent {
   render() {
     return (
       <Switch>
