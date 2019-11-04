@@ -55,7 +55,7 @@ class Jobs extends Component {
     return (
 
       <div className="Jobs">
-        <div className="Jobs-content row">
+        <div className="Jobs-content row ml-5 mr-5">
           <div className="Jobs-search text-center col-4 offset-2 mt-3">
             <form
               className="Jobs-searchForm form-group"
@@ -105,14 +105,11 @@ class Jobs extends Component {
           </div>
 
           {this.state.jobs.length ? (
-            <div className="Jobs-container row ml-5 mr-5">
-              {this.state.jobs.map(job => (
-                //mb-3 sets the margin-bottom spacing
-                <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-3">
-                  <JobCard job={job} handleClick={this.handleClick} />
-                </div>
-              ))}
-            </div>
+            this.state.jobs.map(job => (
+              <div key={job.id} className="Jobs-item col-lg-4 mt-3 px-3">
+                <JobCard job={job} handleClick={this.handleClick} />
+              </div>
+            ))
           ) : (<h1>No Jobs Found</h1>
             )}
         </div>

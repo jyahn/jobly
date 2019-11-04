@@ -1,3 +1,7 @@
 .Jobs-item {
     border-radius: 20px;
 }
+
+.Jobs-content {
+    justify-content: center;
+}
