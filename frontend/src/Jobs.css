@@ -1,7 +1,26 @@
 .Jobs-item {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 .Jobs-content {
-    justify-content: center;
+  justify-content: center;
+}
+
+
+.Salary-header {
+  color: #169CEE;
+}
+
+.Salary-button, .Search-button {
+  width: 200px !important;
+  background-color: rgba(0,0,0,.03);
+  /* color: #28a745; */
+  color: #169CEE;
+  border-color: #169CEE;
+}
+
+
+.Salary-button:hover, .Search-button:hover {
+  background-color: #169CEE;
+  border-color: #169CEE;
 }

@@ -12,3 +12,24 @@
    font-size: 17px;
    color: black;
  }
+
+ .Profile-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #169CEE;
+ }
+
+
+ .Profile-button {
+  width: 150px !important;
+  background-color: rgba(0,0,0,.03);
+  /* color: #28a745; */
+  color: #169CEE;
+  border-color: #169CEE;
+ }
+
+ .Profile-button:hover {
+  background-color: #169CEE;
+  border-color: #169CEE;
+}

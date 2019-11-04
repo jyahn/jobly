@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Profile.css'
 import JoblyApi from "./JoblyApi";
+import { Button } from 'reactstrap';
 
 
 class Profile extends React.PureComponent {
@@ -62,11 +63,11 @@ class Profile extends React.PureComponent {
       <div className="Profile-container col-lg-4 col-md-6 offset-4" style={{ opacity: "0." }}>
         <div className="Profile card">
           <div className="card-body">
-            <h3 className="text-success" style={{ textAlign: "center", marginTop: "20px", marginBottom: "20px" }}>User Profile</h3>
+            <h3 className="Profile-header">User Profile</h3>
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label>Username</label>
-                <p className="form-control-plaintext">rithmtest123</p>
+                <p className="form-control-plaintext">{this.props.currentUser.username}</p>
               </div>
               <div className="form-group">
                 <label>First Name</label>
@@ -109,7 +110,7 @@ class Profile extends React.PureComponent {
                 />
               </div>
               <div className="Profile-btn text-center">
-                <button className="btn btn-success m-*-auto btn-md mt-4">Save Changes</button>
+                <Button className="Profile-button btn m-*-auto btn-md mt-4">Save Changes</Button>
               </div>
             </form>
           </div>

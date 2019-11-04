@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
 // import { Redirect } from 'react-router-dom';
-import { Input } from 'reactstrap';
+import { Input, Button } from 'reactstrap';
 import './Jobs.css'
 
 
@@ -55,8 +55,53 @@ class Jobs extends Component {
     return (
 
       <div className="Jobs">
-        <div className="Jobs-content row ml-5 mr-5">
-          <div className="Jobs-search text-center col-4 offset-2 mt-3">
+        <div className="Jobs-content row ml-5 mr-5 text-center">
+          <div className="SalaryForm col-3 mt-3 text-center">
+            <form onSubmit={this.handleSubmit}>
+              <h5 className="Salary-header"><b>Salary estimate</b></h5>
+              <div className="row">
+                <div className="col">
+                  <Input
+                    type="radio"
+                    name="salaryFilter"
+                    value="50000"
+                    checked={this.state.salaryFilter === "50000"} onChange={this.handleChange} /> $50,000+ <br />
+                  <Input
+                    type="radio"
+                    name="salaryFilter"
+                    value="75000"
+                    checked={this.state.salaryFilter === "75000"} onChange={this.handleChange} /> $75,000+ <br />
+                  <Input
+                    type="radio"
+                    name="salaryFilter"
+                    value="100000"
+                    checked={this.state.salaryFilter === "100000"} onChange={this.handleChange} /> $100,000+ <br />
+                </div>
+                <div className="col">
+                  <Input
+                    type="radio"
+                    name="salaryFilter"
+                    value="125000"
+                    checked={this.state.salaryFilter === "125000"} onChange={this.handleChange} /> $125,000+ <br />
+                  <Input
+                    type="radio"
+                    name="salaryFilter"
+                    value="150000"
+                    checked={this.state.salaryFilter === "150000"} onChange={this.handleChange} /> $150,000+ <br />
+                  <Input
+                    type="radio"
+                    name="salaryFilter"
+                    value="175000"
+                    checked={this.state.salaryFilter === "175000"} onChange={this.handleChange} /> $175,000+ <br />
+                </div>
+              </div>
+              <div className = "Salary-btn mt-2">
+                <Button type="submit" className="Salary-button btn btn-sm btn-success"> Apply Filter </Button>
+              </div>
+            </form>
+          </div>
+
+          <div className="Jobs-search offset-1 col-6 mt-3">
             <form
               className="Jobs-searchForm form-group"
               onSubmit={this.handleSearchSubmit}>
@@ -68,45 +113,13 @@ class Jobs extends Component {
                 placeholder="Enter search term.."
                 onChange={this.handleChange}
               />
-              <button className="Jobs-search-button btn btn-success btn-md mt-3">Search</button>
-            </form>
-          </div>
-
-          <div className="SalaryForm col-4 offset-2 mt-3">
-            <form onSubmit={this.handleSubmit}>
-              <h5 className="text-success"><b>Salary estimate </b></h5>
-              <Input
-                type="radio"
-                name="salaryFilter"
-                value="50000"
-                checked={this.state.salaryFilter === "50000"} onChange={this.handleChange} /> $50,000+ <br />
-              <Input
-                type="radio"
-                name="salaryFilter"
-                value="75000"
-                checked={this.state.salaryFilter === "75000"} onChange={this.handleChange} /> $75,000+ <br />
-              <Input
-                type="radio"
-                name="salaryFilter"
-                value="100000"
-                checked={this.state.salaryFilter === "100000"} onChange={this.handleChange} /> $100,000+ <br />
-              <Input
-                type="radio"
-                name="salaryFilter"
-                value="125000"
-                checked={this.state.salaryFilter === "125000"} onChange={this.handleChange} /> $125,000+ <br />
-              <Input
-                type="radio"
-                name="salaryFilter"
-                value="150000"
-                checked={this.state.salaryFilter === "150000"} onChange={this.handleChange} /> $150,000+ <br /> <br />
-              <button type="submit" className="btn btn-sm btn-success"> Apply Filter </button>
+              <Button className="Search-button btn btn-md mt-3">Search</Button>
             </form>
           </div>
 
           {this.state.jobs.length ? (
             this.state.jobs.map(job => (
-              <div key={job.id} className="Jobs-item col-lg-4 mt-3 px-3">
+              <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-3">
                 <JobCard job={job} handleClick={this.handleClick} />
               </div>
             ))

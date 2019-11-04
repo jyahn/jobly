@@ -22,8 +22,8 @@ class JobCard extends Component {
         </div>
         <div className="JobCard-btn">
           <Button
-            className="JobCard-button btn btn-success btn-sm mb-2"
-          >Apply</Button>
+            className="JobCard-button btn btn-sm my-2">
+            Apply</Button>
         </div>
       </div>
     )

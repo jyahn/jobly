@@ -4,5 +4,13 @@
 } */
 
 .CompanyCard-desc {
-  color: black;
+  color: #404040;
+}
+
+/* .CompanyCard-name {
+  color: #169CEE;
+} */
+
+.CompanyCard-nd {
+  color: #169CEE;
 }

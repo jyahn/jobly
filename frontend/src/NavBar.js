@@ -7,13 +7,13 @@ class NavBar extends Component {
   render() {
     return (
       this.props.loggedIn ?
-        <nav className="Navbar navbar navbar-expand-md" style={{ borderBottom: "4px solid #28a745" }}>
-          <NavLink className="nav-link navbar-brand navItem" style={{ color: "white" }} exact to='/'>Jobly</NavLink>
+        <nav className="Navbar navbar navbar-expand-md">
+          <NavLink className="nav-link navbar-brand brandItem" exact to='/'>jobly</NavLink>
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item mr-4"><NavLink className="nav-link navItem" style={{ color: "white" }} exact to='/companies'>Companies</NavLink></li>
-            <li className="nav-item mr-4"><NavLink className="nav-link navItem" style={{ color: "white" }} exact to='/jobs'>Jobs</NavLink></li>
-            <li className="nav-item mr-4"><NavLink className="nav-link navItem" style={{ color: "white" }} exact to='/profile'>Profile</NavLink></li>
-            <li className="nav-item mr-4"><NavLink className="nav-link navItem" style={{ color: "white" }} exact to='/logout'>Logout</NavLink></li>
+            <li className="nav-item mr-4"><NavLink className="nav-link navItem" exact to='/companies'>Companies</NavLink></li>
+            <li className="nav-item mr-4"><NavLink className="nav-link navItem" exact to='/jobs'>Jobs</NavLink></li>
+            <li className="nav-item mr-4"><NavLink className="nav-link navItem" exact to='/profile'>Profile</NavLink></li>
+            <li className="nav-item mr-4"><NavLink className="nav-link navItem" exact to='/logout'>Logout</NavLink></li>
           </ul>
         </nav >
         :

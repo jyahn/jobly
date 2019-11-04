@@ -42,8 +42,8 @@ class Companies extends Component {
     return (
       <div className="Companies">
         <div className="Companies-content">
-          <div className="Companies-search text-center col-4 offset-4 mt-3">
-            <form className="form-group" onSubmit={this.handleSearchSubmit}>
+          <div className="Companies-search text-center col-lg-6 offset-4 my-4">
+            <form className="row" onSubmit={this.handleSearchSubmit}>
               <Input
                 type="text"
                 value={this.state.search}
@@ -52,7 +52,7 @@ class Companies extends Component {
                 onChange={this.handleSearchChange}
                 className="Companies-input"
               />
-              <Button className="Jobs-search-button btn btn-success btn-md mt-3">Search</Button>
+              <Button className="Companies-search-button btn btn-md">Search</Button>
             </form>
           </div>
           <div className="row justify-content-center">

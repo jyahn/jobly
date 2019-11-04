@@ -84,8 +84,10 @@
   width: 650px;
 }
 .Companies-list-item:hover {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.20);
-  background-color: #34ce57;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.20);
+  /* box-shadow: 0 0 2px #c4c7cc; */
+  /* background-color: #37F6FF; */
+  /* background-color: #169CEE;; */
   ;
 }
 
@@ -95,4 +97,20 @@
 
 .Companies-list-item {
   height: 115px;
+}
+
+.Companies-search-button {
+  /* width: 200px !important; */
+  background-color: white;
+  color: #169CEE;
+  border-color: #169CEE;
+}
+
+.Companies-search-button:hover{
+  background-color: #169CEE;
+  border-color: #169CEE;
+}
+
+.Companies-input{
+  width: 400px;
 }

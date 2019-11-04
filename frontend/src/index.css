@@ -1,12 +1,15 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  /* font-family: 'alrightRegular'; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #0b0c10; */
   /* color: #66fcf1; */
   /* background: url("./images/skyscrapers.jpeg") no-repeat center center fixed; */
   background-size: cover;
+  color: #404040;
+
 }
 
 code {
