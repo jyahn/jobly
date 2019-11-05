@@ -5,6 +5,25 @@ import { Button } from 'reactstrap';
 
 
 class JobCard extends Component {
+
+  convertSalary(salary) {
+    let result = ''
+    let salaryString = salary.toString();
+    let count = 0;
+    for (let i = salaryString.length; i > 0; i--) {
+      if (count === 3) {
+        result = ',' + result;
+        i++;
+        count = 0;
+      }
+      else {
+        result = salaryString[i - 1] + result;
+        count += 1;
+      }
+    }
+    return '$' + result
+  }
+
   render() {
     return (
 
@@ -14,9 +33,10 @@ class JobCard extends Component {
         </div>
         <div className="JobCard-se card-body">
           <p className="JobCard-salary" >
-            Salary: {this.props.job.salary}
+            Salary: {this.convertSalary(this.props.job.salary)}
           </p>
-          <p className="JobCard-equity">{this.props.job.equity}
+          <p className="JobCard-equity">
+            {Math.trunc(this.props.job.equity * 100) + '%'}
             <span className="JobCard-eqy"> EQT</span>
           </p>
         </div>

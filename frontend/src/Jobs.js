@@ -96,7 +96,7 @@ class Jobs extends Component {
                 </div>
               </div>
               <div className = "Salary-btn mt-2">
-                <Button type="submit" className="Salary-button btn btn-sm btn-success"> Apply Filter </Button>
+                <Button type="submit" className="Salary-button btn btn-sm"> Apply Filter </Button>
               </div>
             </form>
           </div>
