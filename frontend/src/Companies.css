@@ -112,5 +112,11 @@
 }
 
 .Companies-input{
-  width: 400px;
+  width: 85%;
+}
+
+
+.Companies-search {
+  text-align: center;
+  justify-content: center;
 }

@@ -42,7 +42,7 @@ class Companies extends Component {
     return (
       <div className="Companies">
         <div className="Companies-content">
-          <div className="Companies-search text-center col-lg-6 offset-4 my-4">
+          <div className="Companies-search col-lg-6 offset-3 my-4">
             <form className="row" onSubmit={this.handleSearchSubmit}>
               <Input
                 type="text"
