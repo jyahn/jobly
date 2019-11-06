@@ -4,11 +4,13 @@
 }
   
 .JobCard-button {
-  width: 200px !important;
+  /* width: 200px !important; */
   background-color: rgba(0,0,0,.03);
   /* color: #28a745; */
   color: #169CEE;
   border-color: #169CEE;
+  position: relative;
+  width: 80%;
 }
 
 .JobCard-button:hover {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
 // import { Redirect } from 'react-router-dom';
@@ -17,6 +17,7 @@ class Jobs extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.handleSalaryFilter = this.handleSalaryFilter.bind(this);
   }
 
   async componentDidMount() {
@@ -27,7 +28,21 @@ class Jobs extends Component {
     })
   }
 
+
+  async handleSalaryFilter(evt, salary) {
+    console.log("salary in filter", salary)
+    evt.preventDefault();
+    let jobs = await JoblyApi.getJobsByMinSalary({ salary: salary })
+    console.log("jobs is ", jobs)
+    jobs.sort((a, b) => a.salary - b.salary);
+    this.setState({
+      jobs
+    })
+  }
+
   handleChange(evt) {
+    evt.preventDefault();
+    console.log("hello")
     this.setState({
       [evt.target.name]: evt.target.value
     });
@@ -52,80 +67,100 @@ class Jobs extends Component {
   }
 
   render() {
+    console.log("this.state in jobs", this.state)
+    console.log("this.props in jobs", this.props)
     return (
 
       <div className="Jobs">
-        <div className="Jobs-content row ml-5 mr-5 text-center">
-          <div className="SalaryForm col-3 mt-3 text-center">
-            <form onSubmit={this.handleSubmit}>
-              <h5 className="Salary-header"><b>Salary estimate</b></h5>
-              <div className="row">
-                <div className="col">
-                  <Input
-                    type="radio"
-                    name="salaryFilter"
-                    value="50000"
-                    checked={this.state.salaryFilter === "50000"} onChange={this.handleChange} /> $50,000+ <br />
-                  <Input
-                    type="radio"
-                    name="salaryFilter"
-                    value="75000"
-                    checked={this.state.salaryFilter === "75000"} onChange={this.handleChange} /> $75,000+ <br />
-                  <Input
-                    type="radio"
-                    name="salaryFilter"
-                    value="100000"
-                    checked={this.state.salaryFilter === "100000"} onChange={this.handleChange} /> $100,000+ <br />
-                </div>
-                <div className="col">
-                  <Input
-                    type="radio"
-                    name="salaryFilter"
-                    value="125000"
-                    checked={this.state.salaryFilter === "125000"} onChange={this.handleChange} /> $125,000+ <br />
-                  <Input
-                    type="radio"
-                    name="salaryFilter"
-                    value="150000"
-                    checked={this.state.salaryFilter === "150000"} onChange={this.handleChange} /> $150,000+ <br />
-                  <Input
-                    type="radio"
-                    name="salaryFilter"
-                    value="175000"
-                    checked={this.state.salaryFilter === "175000"} onChange={this.handleChange} /> $175,000+ <br />
-                </div>
-              </div>
-              <div className = "Salary-btn mt-2">
-                <Button type="submit" className="Salary-button btn btn-sm"> Apply Filter </Button>
-              </div>
-            </form>
-          </div>
-
-          <div className="Jobs-search offset-1 col-6 mt-3">
-            <form
-              className="Jobs-searchForm form-group"
-              onSubmit={this.handleSearchSubmit}>
-              <input
-                className="Jobs-input form-control"
-                type="text"
-                value={this.state.search}
-                name="search"
-                placeholder="Enter search term.."
-                onChange={this.handleChange}
-              />
-              <Button className="Search-button btn btn-md mt-3">Search</Button>
-            </form>
-          </div>
-
-          {this.state.jobs.length ? (
-            this.state.jobs.map(job => (
-              <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-3">
-                <JobCard job={job} handleClick={this.handleClick} />
-              </div>
-            ))
-          ) : (<h1>No Jobs Found</h1>
-            )}
+        {/* <div className="Jobs-content row ml-5 mr-5 text-center"> */}
+        <div className="Jobs-search col-6 mt-3">
+          <form
+            className="Jobs-searchForm form-group"
+            onSubmit={this.handleSearchSubmit}>
+            <input
+              className="Jobs-input form-control"
+              type="text"
+              value={this.state.search}
+              name="search"
+              placeholder="Enter search term.."
+              onChange={this.handleChange}
+            />
+            <Button className="Search-button btn btn-md mt-3">Search</Button>
+          </form>
         </div>
+        <table className="Jobs-content row ml-5 mr-5">
+
+          <tbody>
+            <tr>
+              {/* // <div className="SalaryForm col-3 mt-3 text-center"> */}
+              <td className="SalaryForm" valign="top">
+                {/* <form onSubmit={this.handleSubmit}> */}
+                <h5 className="Salary-header mt-3"><b>Salary estimate</b></h5>
+                <div className="row">
+                  <div className="col">
+                    <a href="#"
+                      type="radio"
+                      name="salaryFilter"
+                      value="50000"
+                      checked={this.state.salaryFilter === "50000"}
+                      onClick={(e) => { this.handleSalaryFilter(e, 50000) }}> $50,000+ </a> <br />
+                    <a href="#"
+                      type="radio"
+                      name="salaryFilter"
+                      value="75000"
+                      checked={this.state.salaryFilter === "75000"}
+                      onClick={(e) => { this.handleSalaryFilter(e, 75000) }} > $75,000+ </a> <br />
+                    <a href="#"
+                      type="radio"
+                      name="salaryFilter"
+                      value="100000"
+                      checked={this.state.salaryFilter === "100000"}
+                      onClick={(e) => { this.handleSalaryFilter(e, 100000) }}> $100,000+ </a> <br />
+                    {/* </div> */}
+                    {/* <div className="col"> */}
+                    <a href="#"
+                      type="radio"
+                      name="salaryFilter"
+                      value="125000"
+                      checked={this.state.salaryFilter === "125000"}
+                      onClick={(e) => { this.handleSalaryFilter(e, 125000) }} > $125,000+</a> <br />
+                    <a href="#"
+                      type="radio"
+                      name="salaryFilter"
+                      value="150000"
+                      checked={this.state.salaryFilter === "150000"}
+                      onClick={(e) => { this.handleSalaryFilter(e, 150000) }} > $150,000+</a> <br />
+                    <a href="#"
+                      type="radio"
+                      name="salaryFilter"
+                      value="175000"
+                      checked={this.state.salaryFilter === "175000"}
+                      onClick={(e) => { this.handleSalaryFilter(e, 175000) }} > $175,000+</a> <br />
+                  </div>
+                </div>
+                {/* <div className="Salary-btn mt-2">
+                  <Button type="submit" className="Salary-button btn btn-sm"> Apply Filter </Button>
+                </div> */}
+                {/* </form> */}
+              </td>
+
+              {this.state.jobs.length ? (
+                <td className="container">
+                  <div className="row">
+                    {/* <div className = "Wow col-lg-3 mh-100"> */}
+                    {/* </div> */}
+                    {this.state.jobs.map(job => (
+                      <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-3">
+                        <JobCard job={job} handleClick={this.handleClick} />
+                      </div>
+                    ))
+                    })
+                </div>
+                </td>) : (<h1>No Jobs Found</h1>
+                )}
+            </tr>
+          </tbody>
+        </table>
       </div >
     );
   }

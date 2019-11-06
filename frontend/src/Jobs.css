@@ -1,10 +1,11 @@
 .Jobs-item {
   border-radius: 20px;
+  /* max-height: 271px; */
 }
 
-.Jobs-content {
+/* .Jobs-content {
   justify-content: center;
-}
+} */
 
 
 .Salary-header {
@@ -12,15 +13,32 @@
 }
 
 .Salary-button, .Search-button {
-  width: 200px !important;
+  /* width: 200px !important; */
   background-color: rgba(0,0,0,.03);
   /* color: #28a745; */
   color: #169CEE;
   border-color: #169CEE;
+  position: relative;
+
 }
 
 
 .Salary-button:hover, .Search-button:hover {
   background-color: #169CEE;
   border-color: #169CEE;
+}
+
+.Wow {
+  height: 700px;
+}
+
+
+.SalaryForm {
+  width: 20%;
+}
+
+.Jobs-search {
+  text-align: center;
+  /* margin: 0 auto accomplishes the same thing as offset-3 */
+  margin: 0 auto;
 }
