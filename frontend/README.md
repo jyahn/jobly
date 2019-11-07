@@ -4,11 +4,11 @@ Jobly is a full-stack job board application built with a React frontend, Express
 
 Users can create an account, log-in, search for companies, search for jobs and apply to them.
 
-![Alt text](frontend/src/assets/jobly-home-screenshot?raw=true "Home")
-![Alt text](frontend/src/assets/jobly-companies-screenshot.png?raw=true "Companies")
-![Alt text](frontend/src/assets/jobly-company-jobs-screenshot?raw=true "Single company and its' jobs")
-![Alt text](frontend/src/assets/jobly-jobs-nofilter-screenshot?raw=true "Jobs")
-![Alt text](frontend/src/assets/jobly-dual-search-screenshot?raw=true "Jobs filtered by salary and text simultaneously")
+![Alt text](frontend/src/images/jobly-home-screenshot?raw=true "Home")
+![Alt text](frontend/src/images/jobly-companies-screenshot.png?raw=true "Companies")
+![Alt text](frontend/src/images/jobly-company-jobs-screenshot?raw=true "Single company and its' jobs")
+![Alt text](frontend/src/images/jobly-jobs-nofilter-screenshot?raw=true "Jobs")
+![Alt text](frontend/src/images/jobly-dual-search-screenshot?raw=true "Jobs filtered by salary and text simultaneously")
 
 ## Installation 
 
