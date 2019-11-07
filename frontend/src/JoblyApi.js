@@ -44,16 +44,12 @@ class JoblyApi {
   }
 
   static async getJobsByMinSalary(min_salary) {
-    // console.log("min_salary IS", min_salary)
     let res = await this.request('jobs', min_salary);
-    // console.log("RESS", res)
     return res.jobs;
   }
 
   static async getJobsBySearch(search) {
-    // console.log("search is ", search)
     let res = await this.request('jobs', search);
-    // console.log("RESS", res)
     return res.jobs;
   }
 
@@ -64,7 +60,6 @@ class JoblyApi {
 
   static async getUser(username) {
     let res = await this.request(`users/${username}`);
-    // console.log("WHATS RES", res)
     return res.user
   }
 
@@ -73,14 +68,13 @@ class JoblyApi {
     return res.token;
   }
 
-  static async toggleJobApply() {
-
+  static async applyToJob(id) {
+    let res = await this.request(`jobs/${id}/apply`, { state: 'applied' }, 'post')
+    console.log("RESSSS is", res)
   }
 
   static async editUser(username, userData) {
-    console.log("userdata is ", userData)
     let res = await this.request(`users/${username}`, userData, "patch")
-    console.log("res in edituser is", res)
     return res;
   }
 
