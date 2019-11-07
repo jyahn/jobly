@@ -4,7 +4,7 @@ import "./JobCard.css"
 import { Button } from 'reactstrap';
 
 
-class JobCard extends Component {
+class JobCard extends React.PureComponent {
 
   convertSalary(salary) {
     let result = ''
@@ -25,8 +25,8 @@ class JobCard extends Component {
   }
 
   render() {
+    console.log("props in jobcarD", this.props)
     return (
-
       <div className="JobCard card mb-4">
         <div className="JobCard-title card-header">
           <h5><strong>{this.props.job.title}</strong></h5>
@@ -42,8 +42,16 @@ class JobCard extends Component {
         </div>
         <div className="JobCard-btn">
           <Button
-            className="JobCard-button btn btn-sm my-2">
-            Apply</Button>
+            onClick={() => this.props.applyToJob(this.props.job.id)}
+            disabled={this.props.job.state === 'applied' || this.props.loading}
+            className="JobCard-button btn btn-sm my-2"
+            id={this.props.job.state === 'applied' ? '' : 'JobCard-active'}>
+            {this.props.job.loading
+              ? <i class="fas fa-spinner" />
+              : this.props.job.state === 'applied'
+                ? <span id="Applied-text">Applied </span>
+                : <span id="Apply-text" style={{ opacity: 1 }}>Apply</span>}
+          </Button>
         </div>
       </div>
     )

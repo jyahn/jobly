@@ -3,27 +3,61 @@ import JoblyApi from "./JoblyApi"
 import JobCard from "./JobCard";
 import { Redirect } from 'react-router-dom';
 import './Company.css'
+import uuid from 'uuid/v4'
+
 
 
 class Company extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      company: {
-        jobs: []
-      }
+      company: {},
+      jobs: [],
+      error: []
+
     }
+    this.handleApplyButton = this.handleApplyButton.bind(this);
+
   }
+
 
   async componentDidMount() {
     let company = await JoblyApi.getCompany(this.props.match.params.company)
+    let jobs = await JoblyApi.getJobs();
+    jobs = jobs.filter(job => job.company_handle === company.handle);
     this.setState({
-      company: company
-    })
+      jobs: jobs,
+      company
+    });
+  }
+
+
+  async handleApplyButton(id) {
+    try {
+      let jobIdx = this.state.jobs.findIndex(job => job.id === id);
+      console.log("jobidx is", jobIdx);
+      let job = this.state.jobs[jobIdx];
+      job = { ...job, loading: true }
+      this.setState(st => ({
+        jobs: [...st.jobs.slice(0, jobIdx), job, ...st.jobs.slice(jobIdx + 1)]
+      }));
+      await JoblyApi.applyToJob(id);
+      job = { ...job, loading: false }
+      job.state = 'applied';
+      this.setState(st => ({
+        jobs: [...st.jobs.slice(0, jobIdx), job, ...st.jobs.slice(jobIdx + 1)]
+      }));
+    } catch (err) {
+      this.setState(st => ({
+        error: [...st.error, err]
+      }));
+    }
   }
 
   render() {
-    console.log(this.state.company);
+    console.log("state in comp", this.state);
+    console.log("PROPS IN COMP", this.props);
+
     return (
       <div>
         {this.props.loggedIn ?
@@ -33,9 +67,9 @@ class Company extends Component {
               <h6>{this.state.company.description}</h6>
             </div>
             <div className="row">
-              {this.state.company.jobs.sort((a, b) => a.salary - b.salary).map((job) => (
-                <div className="Jobs-item col-lg-4 col-md-6 mt-3 px-5 text-center">
-                  <JobCard job={job} />
+              {this.state.jobs.sort((a, b) => a.salary - b.salary).map((job) => (
+                <div key = {job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-5 text-center">
+                  <JobCard job={job} applyToJob={this.handleApplyButton} />
                 </div>
               ))}
             </div>

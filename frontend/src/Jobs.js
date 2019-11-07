@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
-// import { Redirect } from 'react-router-dom';
 import { Input, Button } from 'reactstrap';
 import './Jobs.css'
 
@@ -16,13 +15,15 @@ class Jobs extends Component {
       searchFilter: false,
       salaryThreshold: '',
       search: "",
-      searchByWord: ""
+      searchByWord: "",
+      error: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
     this.handleSalaryFilter = this.handleSalaryFilter.bind(this);
     this.handleUndo = this.handleUndo.bind(this);
+    this.handleApplyButton = this.handleApplyButton.bind(this);
   }
 
 
@@ -151,6 +152,28 @@ class Jobs extends Component {
     }
   }
 
+  async handleApplyButton(id) {
+    try {
+      let jobIdx = this.state.jobs.findIndex(job => job.id === id);
+      console.log("jobidx is", jobIdx);
+      let job = this.state.jobs[jobIdx];
+      job = { ...job, loading: true }
+      this.setState(st => ({
+        jobs: [...st.jobs.slice(0, jobIdx), job, ...st.jobs.slice(jobIdx + 1)]
+      }));
+      await JoblyApi.applyToJob(id);
+      job = { ...job, loading: false }
+      job.state = 'applied';
+      this.setState(st => ({
+        jobs: [...st.jobs.slice(0, jobIdx), job, ...st.jobs.slice(jobIdx + 1)]
+      }));
+    } catch (err) {
+      this.setState(st => ({
+        error: [...st.error, err]
+      }));
+    }
+  }
+
   render() {
     return (
       <div className="Jobs">
@@ -217,7 +240,7 @@ class Jobs extends Component {
                   <div className="Jobsss row text-center">
                     {this.state.jobs.map(job => (
                       <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-3">
-                        <JobCard job={job} handleClick={this.handleClick} />
+                        <JobCard job={job} convertSalary={this.convertSalary} applyToJob={this.handleApplyButton} />
                       </div>
                     ))
                     }
