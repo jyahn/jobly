@@ -9,7 +9,7 @@ Users can create an account, log-in, search for companies, search for jobs and a
 ![Alt text](/frontend/src/images/jobly-companies-screenshot.png?raw=true "Companies")
 ![Alt text](/frontend/src/images/jobly-company-jobs-screenshot.png?raw=true "Single company and its' jobs")
 ![Alt text](/frontend/src/images/jobly-jobs-nofilter-screenshot.png?raw=true "Jobs")
-![Alt text](/frontend/src/images/jobly-dual-search-screenshot.png?raw=true "Jobs filtered by salary and text simultaneously")
+![Alt text](/frontend/src/images/jobly-dualfilter-screenshot.png?raw=true "Jobs filtered by salary and text simultaneously")
 
 ## Installation 
 
