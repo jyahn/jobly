@@ -3,7 +3,6 @@ import JoblyApi from "./JoblyApi"
 import JobCard from "./JobCard";
 import { Redirect } from 'react-router-dom';
 import './Company.css'
-import uuid from 'uuid/v4'
 
 
 
@@ -55,9 +54,6 @@ class Company extends Component {
   }
 
   render() {
-    console.log("state in comp", this.state);
-    console.log("PROPS IN COMP", this.props);
-
     return (
       <div>
         {this.props.loggedIn ?

@@ -114,6 +114,7 @@ class Jobs extends Component {
   }
 
   async handleSearchSubmit(evt) {
+    console.log("wew")
     evt.preventDefault()
     let searchFilter = true;
     if (this.state.search === "") {
@@ -140,11 +141,11 @@ class Jobs extends Component {
         })
       }
       else {
+        console.log("maybe?")
         let jobs = this.state.filteredJobs.filter(job => (job.title.toLowerCase().includes(this.state.search.toLowerCase())))
         jobs.sort((a, b) => a.salary - b.salary);
         this.setState({
           jobs,
-          filteredJobs: jobs,
           searchFilter,
           searchByWord: this.state.search
         })
@@ -175,6 +176,8 @@ class Jobs extends Component {
   }
 
   render() {
+    console.log("props in jobs", this.props)
+    console.log("state in jobs", this.state)
     return (
       <div className="Jobs">
         <div className="Jobs-search col-6 mt-3">
@@ -196,7 +199,7 @@ class Jobs extends Component {
             {this.state.searchFilter ?
               <div className="x-jobs">
                 <h6>
-                  {this.state.searchByWord} jobs
+                  {this.state.searchByWord} jobs above {this.state.salaryFilter ? this.convertSalary(this.state.salaryThreshold) : null}
                 </h6>
               </div>
               : null}
