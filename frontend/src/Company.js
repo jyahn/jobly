@@ -33,7 +33,7 @@ class Company extends Component {
               <h6>{this.state.company.description}</h6>
             </div>
             <div className="row">
-              {this.state.company.jobs.map((job) => (
+              {this.state.company.jobs.sort((a, b) => a.salary - b.salary).map((job) => (
                 <div className="Jobs-item col-lg-4 col-md-6 mt-3 px-5 text-center">
                   <JobCard job={job} />
                 </div>
