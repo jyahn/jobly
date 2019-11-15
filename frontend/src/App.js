@@ -40,11 +40,11 @@ class App extends React.PureComponent {
   }
   render() {
     console.log("state in app", this.state);
-    
+
     if (this.state.loading) {
       return "Loading..."
     }
-    
+
     return (
       <div>
         <BrowserRouter>

@@ -17,7 +17,13 @@
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    color: #169CEE;
+    color: black;
+    font-size: 18px;
+ }
+
+ .Profile-username {
+   font-size: 40px;
+   color: #169CEE;
  }
 
 
@@ -32,4 +38,8 @@
  .Profile-button:hover {
   background-color: #169CEE;
   border-color: #169CEE;
+}
+
+Label {
+  color: white;
 }

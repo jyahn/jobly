@@ -199,7 +199,7 @@ class Jobs extends Component {
             {this.state.searchFilter ?
               <div className="x-jobs">
                 <h6>
-                  {this.state.searchByWord} jobs above {this.state.salaryFilter ? this.convertSalary(this.state.salaryThreshold) : null}
+                  {this.state.searchByWord} jobs {this.state.salaryFilter ? 'above ' + this.convertSalary(this.state.salaryThreshold) : null}
                 </h6>
               </div>
               : null}

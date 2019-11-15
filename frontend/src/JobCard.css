@@ -46,6 +46,13 @@
   border-top: 1px solid rgba(0,0,0,.125);
 }
 
+.Job-title {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 
 #JobCard-active {
   /* background-color: #3f9bd5; */

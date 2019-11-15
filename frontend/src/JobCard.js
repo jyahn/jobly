@@ -28,7 +28,7 @@ class JobCard extends React.PureComponent {
     return (
       <div className="JobCard card mb-4">
         <div className="JobCard-title card-header">
-          <h5><strong>{this.props.job.title}</strong></h5>
+          <h5 className="Job-title"><strong>{this.props.job.title}</strong></h5>
         </div>
         <div className="JobCard-se card-body">
           <p className="JobCard-salary" >
