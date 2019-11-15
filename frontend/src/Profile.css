@@ -1,9 +1,7 @@
 .Profile {
     margin:0 auto;
     margin-top: 5%;
-    /* border: 0.7px solid #a0a0a094; */
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
-    /* box-shadow: 20px 60px 20px 20px rgba(15, 10, 10, 0.63); */
     border-radius: 15px;
  }
 
@@ -30,7 +28,6 @@
  .Profile-button {
   width: 150px !important;
   background-color: rgba(0,0,0,.03);
-  /* color: #28a745; */
   color: #169CEE;
   border-color: #169CEE;
  }

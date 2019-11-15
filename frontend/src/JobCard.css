@@ -15,9 +15,7 @@
 }
 
 .JobCard-button:disabled {
-  /* width: 200px !important; */
   background-color: rgba(0,0,0,.03);
-  /* color: #28a745; */
   color: #169CEE;
   border-color: #169CEE;
   position: relative;
@@ -25,16 +23,9 @@
 }
 
 .JobCard-button {
-  /* background-color: rgb(22, 156, 238); */
   background-color: rgba(0,0,0,.03);
-  /* background-color: #3f9bd5; */
-  /* 33/90/83 */
   color: #169CEE;
 }
-
-/* .JobCard-se {
-  color: #007bff;
-} */
 
 .JobCard-title {
   color: #169CEE;
@@ -55,16 +46,11 @@
 
 
 #JobCard-active {
-  /* background-color: #3f9bd5; */
-  /* background-color: rgba(63, 155, 213, 0.8); */
-  /* background-color: rgba(0, 162, 236, 0.6); */
   background-color: rgba(22, 156, 238, 0.6);
   color: white;
-  /* font-weight: 500; */
 }
 
 #JobCard-active:hover {
-  /* background-color: #23b8ee; */
   background-color: #169CEE;
   color: white;
   opacity: 1;

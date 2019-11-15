@@ -31,7 +31,6 @@ table {
   height: 700px;
 }
 
-
 .SalaryForm {
   width: 5%;
   padding-right: 5%;
@@ -41,10 +40,6 @@ table {
   text-align: center;
   /* margin: 0 auto accomplishes the same thing as offset-3 */
   margin: 0 auto;
-  /* justify-content: center; */
-  /* margin-left: 15%;
-  left: 50%; */
-  /* margin: auto, auto, auto, 400px; */
 }
 
 tbody{
@@ -59,11 +54,6 @@ tbody{
   padding-right: 5%
 }
 
-.Search-button {
-  /* position: absolute; */
-}
-
 .x-jobs{
   margin-top: 10px;
-  /* text-align: left; */
 }

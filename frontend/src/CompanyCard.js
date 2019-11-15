@@ -25,14 +25,3 @@ export default CompanyCard;
 
 
 
-
-// return (
-//   <Link className="Card card" exact to={`/companies/${this.props.company.handle}`}>
-//     <div className="card-body">
-//       <h6 className="card-title d-flex justify-content-between" />
-//       {this.props.company.name}
-//       <p className="card-text">{this.props.company.description}</p>
-//     </div>
-//   </Link>
-// );
-
