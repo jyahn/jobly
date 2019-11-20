@@ -1,20 +1,20 @@
 .Navbar {
-    background-color: rgba(0,0,0,.06);
-    border-bottom: 1px solid rgba(0,0,0,.3);
+  background-color: rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.3);
 }
 
 .navItem {
-    color: #404040;
+  color: #404040;
 }
 
 .brandItem {
-    font-family: 'alrightRegular';
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: 27px;
+  font-family: 'alrightRegular';
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 27px;
 }
 
 .navItem:hover{
-    color: #169CEE;
-    box-shadow: 0 -3px #169CEE inset;
+  color: #169CEE;
+  box-shadow: 0 -3px #169CEE inset;
 }
