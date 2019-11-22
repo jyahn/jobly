@@ -38,14 +38,11 @@ class Profile extends React.PureComponent {
     // let { loading, password, ...userData } = this.state
     let { loading, password, first_name, last_name, email, photo_url } = this.state
     let userData = { first_name, last_name, email }
-    console.log("userdata in prof", userData);
     let updatedProfile = await JoblyApi.editUser(this.props.currentUser.username, userData);
   }
 
 
   render() {
-    console.log("props in profile", this.props)
-    console.log("state in profile", this.state)
     if (this.state.loading) {
       return 'Loading Profile...'
     }

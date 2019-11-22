@@ -73,7 +73,6 @@ class JoblyApi {
 
   static async applyToJob(id) {
     let res = await this.request(`jobs/${id}/apply`, { state: 'applied' }, 'post')
-    console.log("RESSSS is", res)
   }
 
   static async editUser(username, userData) {

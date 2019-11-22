@@ -34,7 +34,6 @@ class Company extends Component {
   async handleApplyButton(id) {
     try {
       let jobIdx = this.state.jobs.findIndex(job => job.id === id);
-      console.log("jobidx is", jobIdx);
       let job = this.state.jobs[jobIdx];
       job = { ...job, loading: true }
       this.setState(st => ({

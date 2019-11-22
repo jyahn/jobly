@@ -58,22 +58,3 @@ class JobCard extends React.PureComponent {
 }
 
 export default JobCard;
-
-
-
-// render() {
-//   console.log("State in JOBCARD", this.props)
-//   return (
-//     <div className="Card card" style= {{marginLeft:'20px'}}>
-//       <div className="card-body">
-//         <h6 className="card-title d-flex justify-content-between">
-//           <span className="text-capitalize">{this.props.job.title}</span>
-//         </h6>
-//         <div>Salary: {this.props.job.salary}</div>
-//         <div>Equity: {this.props.job.equity}</div>
-//         <button type="submit" className="btn btn-sm btn-block btn-info" >Apply</button>
-//       </div>
-//     </div>
-//   );
-// }
-// }
