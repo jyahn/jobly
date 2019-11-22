@@ -1,6 +1,9 @@
 # Jobly
 
-Jobly is a full-stack job board application built with a React frontend, Express backend, and PostgreSQL database. 
+Jobly is a full-stack job board application built with a React frontend, Express backend, and PostgreSQL database.
+
+Jobly is [live on Heroku](https://jobly-jy-frontend.herokuapp.com/).
+
 
 ## Table of Contents
 - [Screenshots](#screenshots)
@@ -8,7 +11,6 @@ Jobly is a full-stack job board application built with a React frontend, Express
 - [Features](#features)
 - [Technologies](#technologies)
 - [Features to add](#features-to-add)
-- [Team](#team)
 
 ## Screenshots
 
@@ -43,7 +45,11 @@ npm start
 
 ## Features
 
-- Users can log-in, view, filter, and apply for jobs.
+- User authentication / authorization
+- View companies / jobs
+- Filter jobs by multiple criteria and easily switch between any combination of filters
+- Apply to jobs
+- Edit profile
 
 ---
 
@@ -61,6 +67,5 @@ npm start
 
 ## Features to add
 
-- 
-
----
+- Infinite scrolling
+- Users should be able to view the list of jobs they've applied to
