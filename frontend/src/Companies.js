@@ -71,7 +71,7 @@ class Companies extends Component {
                 ))}
               </ListGroup>
             ) : (
-                <h1>No Companies Found</h1>
+                <h1>Loading</h1>
               )}
           </div>
         </div>

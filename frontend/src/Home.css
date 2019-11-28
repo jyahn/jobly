@@ -1,9 +1,12 @@
-h2{
-  font-family: 'alrightRegular';
+#home-title{
+  /* font-family: 'alrightRegular'; */
   font-weight: 900;
   letter-spacing: 2px;
-  font-size: 70px;
+  font-size: 6.5vmin;
   color: #169CEE;
+}
+#home-slogan {
+  font-size: 1.75vmin;
 }
 
 .homeContainer {

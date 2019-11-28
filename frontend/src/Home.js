@@ -6,8 +6,8 @@ class Home extends Component {
     return (
       <div>
         <div className="homeContainer">
-          <h2 className="text">jobly</h2>
-          <h6>All the jobs in one, convenient place.</h6>
+          <h2 id="home-title">jobly</h2>
+          <h6 id = "home-slogan">All the jobs in one, convenient place.</h6>
         </div>
       </div>
     );

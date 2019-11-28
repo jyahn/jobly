@@ -192,11 +192,9 @@ class Jobs extends Component {
               </span>
             </div>
             {this.state.searchFilter ?
-              <div className="x-jobs">
-                <h6>
-                  {this.state.searchByWord} jobs {this.state.salaryFilter ? 'above ' + this.convertSalary(this.state.salaryThreshold) : null}
+              <h6 id="filter-descrip">
+                Displaying {this.state.searchByWord} jobs {this.state.salaryFilter ? 'above ' + this.convertSalary(this.state.salaryThreshold) : null} ...
                 </h6>
-              </div>
               : null}
 
           </form>
@@ -244,7 +242,7 @@ class Jobs extends Component {
                     }
                   </div>
                 </td>)
-                : (<h1>No Jobs Found</h1>
+                : (<h1>Loading...</h1>
                 )}
             </tr>
           </tbody>

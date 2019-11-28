@@ -8,7 +8,6 @@ table {
   display: table;
 }
 
-
 .Salary-header {
   color: #169CEE;
 }
@@ -18,17 +17,11 @@ table {
   color: #169CEE;
   border-color: #169CEE;
   position: relative;
-
 }
-
 
 .Salary-button:hover, .Search-button:hover {
   background-color: #169CEE;
   border-color: #169CEE;
-}
-
-.Wow {
-  height: 700px;
 }
 
 .SalaryForm {
@@ -54,6 +47,9 @@ tbody{
   padding-right: 5%
 }
 
-.x-jobs{
-  margin-top: 10px;
+#filter-descrip {
+  color: #169CEE;
+  font-weight: 600;
+  font-size: 1.7vmin;
+  margin-top: 25px;
 }
