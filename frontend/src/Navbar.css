@@ -18,3 +18,12 @@
   color: #169CEE;
   box-shadow: 0 -3px #169CEE inset;
 }
+
+.active {
+  color: #169CEE;
+  box-shadow: 0 -3px #169CEE inset;
+}
+
+#nav-logo{
+  box-shadow: none;
+}

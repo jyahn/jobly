@@ -8,7 +8,7 @@ class NavBar extends Component {
     return (
       this.props.loggedIn ?
         <nav className="Navbar navbar navbar-expand-md">
-          <NavLink className="nav-link navbar-brand brandItem" exact to='/'>jobly</NavLink>
+          <NavLink className="nav-link navbar-brand brandItem" id ="nav-logo" exact to='/'>jobly</NavLink>
           <ul className="navbar-nav ml-auto">
             <li className="nav-item mr-4"><NavLink className="nav-link navItem" exact to='/companies'>Companies</NavLink></li>
             <li className="nav-item mr-4"><NavLink className="nav-link navItem" exact to='/jobs'>Jobs</NavLink></li>
