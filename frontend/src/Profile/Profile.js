@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import './Profile.css'
 import JoblyApi from "../JoblyApi";
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Label, Input } from 'reactstrap';
 
 
-class Profile extends React.PureComponent {
+class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -4,8 +4,6 @@ import JobCard from "../JobCard/JobCard";
 import { Redirect } from 'react-router-dom';
 import './Company.css'
 
-
-
 class Company extends Component {
   constructor(props) {
     super(props);
@@ -13,12 +11,9 @@ class Company extends Component {
       company: {},
       jobs: [],
       error: []
-
     }
     this.handleApplyButton = this.handleApplyButton.bind(this);
-
   }
-
 
   async componentDidMount() {
     let company = await JoblyApi.getCompany(this.props.match.params.company)
@@ -29,7 +24,6 @@ class Company extends Component {
       company
     });
   }
-
 
   async handleApplyButton(id) {
     try {
@@ -63,7 +57,7 @@ class Company extends Component {
             </div>
             <div className="row">
               {this.state.jobs.sort((a, b) => a.salary - b.salary).map((job) => (
-                <div key = {job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-5 text-center">
+                <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-5 text-center">
                   <JobCard job={job} applyToJob={this.handleApplyButton} />
                 </div>
               ))}

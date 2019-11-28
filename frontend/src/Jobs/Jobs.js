@@ -73,7 +73,6 @@ class Jobs extends Component {
     }
   }
 
-
   async handleSalaryFilter(evt, salary) {
     evt.preventDefault();
     if (this.state.searchFilter === false) {

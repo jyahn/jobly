@@ -10,7 +10,6 @@ class App extends React.PureComponent {
     this.state = {
       loggedIn: false,
       currentUser: ''
-      // loading: true
     }
 
     this.changeLoginState = this.changeLoginState.bind(this);
@@ -39,10 +38,6 @@ class App extends React.PureComponent {
     })
   }
   render() {
-    // if (this.state.loading) {
-    //   return "Loading..."
-    // }
-
     return (
       <div>
         <BrowserRouter>

@@ -5,9 +5,7 @@
 }
   
 .JobCard-button {
-  /* width: 200px !important; */
   background-color: rgba(0,0,0,.03);
-  /* color: #28a745; */
   color: #169CEE;
   border-color: #169CEE;
   position: relative;
@@ -31,7 +29,6 @@
   color: #169CEE;
 }
 
-
 .JobCard-btn {
   background-color: rgba(0,0,0,.03);
   border-top: 1px solid rgba(0,0,0,.125);
@@ -43,7 +40,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 
 #JobCard-active {
   background-color: rgba(22, 156, 238, 0.6);
