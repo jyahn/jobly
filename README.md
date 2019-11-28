@@ -14,11 +14,11 @@ Jobly is [live on Heroku](https://jobly-jy-frontend.herokuapp.com/).
 
 ## Screenshots
 
-![Alt text](/frontend/src/images/jobly-home.png?raw=true "Home")
-![Alt text](/frontend/src/images/jobly-companies.png?raw=true "Companies")
-![Alt text](/frontend/src/images/jobly-company.png?raw=true "Single company and its' jobs")
-![Alt text](/frontend/src/images/jobly-jobs.png?raw=true "Jobs")
-![Alt text](/frontend/src/images/jobly-jobs-filtered.png?raw=true "Jobs filtered by salary and text simultaneously")
+![Alt text](/frontend/public/images/jobly-home.png?raw=true "Home")
+![Alt text](/frontend/public/images/jobly-companies.png?raw=true "Companies")
+![Alt text](/frontend/public/images/jobly-company.png?raw=true "Single company and its' jobs")
+![Alt text](/frontend/public/images/jobly-jobs.png?raw=true "Jobs")
+![Alt text](/frontend/public/images/jobly-jobs-filtered.png?raw=true "Jobs filtered by salary and text simultaneously")
 
 ## Installation
 ### Backend Setup:  

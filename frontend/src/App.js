@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import NavBar from './NavBar';
+import NavBar from './NavBar/NavBar';
 import Routes from './Routes';
 import JoblyApi from './JoblyApi';
 

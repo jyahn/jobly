@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import JoblyApi from "./JoblyApi"
-import JobCard from "./JobCard";
+import JoblyApi from "../JoblyApi"
+import JobCard from "../JobCard/JobCard";
 import { Redirect } from 'react-router-dom';
 import './Company.css'
 

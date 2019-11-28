@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Profile.css'
-import JoblyApi from "./JoblyApi";
+import JoblyApi from "../JoblyApi";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 

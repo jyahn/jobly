@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import JobCard from './JobCard';
-import JoblyApi from './JoblyApi';
+import JobCard from '../JobCard/JobCard';
+import JoblyApi from '../JoblyApi';
 import { Input, Button } from 'reactstrap';
 import './Jobs.css'
 

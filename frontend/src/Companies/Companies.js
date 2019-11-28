@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import JoblyApi from "./JoblyApi"
-import CompanyCard from './CompanyCard';
+import JoblyApi from "../JoblyApi"
+import CompanyCard from '../CompanyCard/CompanyCard';
 import { ListGroup, ListGroupItem, Button, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './Companies.css';
