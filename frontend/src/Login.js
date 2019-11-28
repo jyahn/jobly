@@ -98,7 +98,7 @@ class Login extends Component {
                   <div className="form-group">
                     <label>Password</label>
                     <input className="form-control"
-                      type="text"
+                      type="password"
                       name="password"
                       onChange={this.handleChange}
                       value={this.state.password}
