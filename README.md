@@ -37,12 +37,6 @@ npm install
 npm start
 ```
 
-### Clone
-
-- Clone this repo to your local machine using `https://github.com/jyahn/jobly`
-
----
-
 ## Features
 
 - User authentication / authorization
@@ -50,8 +44,6 @@ npm start
 - Filter jobs by multiple criteria and easily switch between any combination of filters
 - Apply to jobs
 - Edit profile
-
----
 
 ## Technologies
 
@@ -62,8 +54,6 @@ npm start
 - Node / Express 
 - PostgreSQL
 - Bcrypt
-
---- 
 
 ## Features to add
 
