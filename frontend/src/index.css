@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Oxygen', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-size: cover;
