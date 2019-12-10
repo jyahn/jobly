@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
 import JobCard from '../JobCard/JobCard';
 import JoblyApi from '../JoblyApi';
+import ErrorHandler from '../ErrorHandler/ErrorHandler';
 import { Input, Button } from 'reactstrap';
-import './Jobs.css'
+import './Jobs.css';
 
 
 class Jobs extends Component {
@@ -75,6 +76,7 @@ class Jobs extends Component {
 
   async handleSalaryFilter(evt, salary) {
     evt.preventDefault();
+    // if there is no existing search filter, we just filter by the new salary filter
     if (this.state.searchFilter === false) {
       let jobs = await JoblyApi.getJobsByMinSalary({ salary: salary })
       jobs.sort((a, b) => a.salary - b.salary);
@@ -84,6 +86,8 @@ class Jobs extends Component {
         salaryFilter: true,
         salaryThreshold: salary
       })
+      // if there is an existing search filter, we filter our already search-filtered list
+      // further to only include jobs surpassing the new salary filter
     } else {
       let jobs = this.state.filteredJobs.filter(job => (job.salary >= salary))
       jobs.sort((a, b) => a.salary - b.salary);
@@ -118,6 +122,7 @@ class Jobs extends Component {
     if (this.state.search === "") {
       searchFilter = false;
     }
+    // if there is no existing salary filter, we just query based on the search filter
     if (this.state.salaryFilter === false) {
       let jobs = await JoblyApi.getJobsBySearch({ search: this.state.search })
       jobs.sort((a, b) => a.salary - b.salary);
@@ -127,7 +132,9 @@ class Jobs extends Component {
         searchFilter,
         searchByWord: this.state.search
       })
+      // if there is a salaryf ilter
     } else {
+      // if there is no search filter, we just query based on the existing salary filter
       if (searchFilter === false) {
         let jobs = await JoblyApi.getJobsByMinSalary({ salary: this.state.salaryThreshold })
         jobs.sort((a, b) => a.salary - b.salary);
@@ -138,6 +145,7 @@ class Jobs extends Component {
           searchByWord: this.state.search
         })
       }
+      // if there is a salary filter AND a search filter
       else {
         let jobs = this.state.filteredJobs.filter(job => (job.title.toLowerCase().includes(this.state.search.toLowerCase())))
         jobs.sort((a, b) => a.salary - b.salary);
@@ -172,11 +180,15 @@ class Jobs extends Component {
   }
 
   render() {
+    if (this.state.error.length > 0) {
+      return <ErrorHandler error={this.state.error} />
+    }
     return (
       <div className="Jobs">
-        <div className="Jobs-search col-6 mt-3">
+        {/* Search filter */}
+        <div className="Jobs-Search col-6 mt-3">
           <form
-            className="Jobs-searchForm form-group"
+            className="Jobs-SearchForm form-group"
             onSubmit={this.handleSearchSubmit}>
             <div className="input-group">
               <input
@@ -198,10 +210,10 @@ class Jobs extends Component {
 
           </form>
         </div>
-        <table className="Jobs-content row ml-5 mr-5">
-
+        <table className="Jobs-Salary row ml-5 mr-5">
           <tbody>
             <tr>
+              {/* Salary Filter */}
               <td className="SalaryForm" valign="top">
                 <h5 className="Salary-header mt-3"><b>Salary estimate</b></h5>
                 <div className="row">
@@ -230,9 +242,10 @@ class Jobs extends Component {
                 </div>
               </td>
 
-              {this.state.jobs.length ? (
+              {/* Display Jobs */}
+              {this.state.jobs.length ?
                 <td className="container">
-                  <div className="Jobsss row text-center">
+                  <div className="Jobs-content row text-center">
                     {this.state.jobs.map(job => (
                       <div key={job.id} className="Jobs-item col-lg-4 col-md-6 mt-3 px-3">
                         <JobCard job={job} convertSalary={this.convertSalary} applyToJob={this.handleApplyButton} />
@@ -240,9 +253,11 @@ class Jobs extends Component {
                     ))
                     }
                   </div>
-                </td>)
-                : (<h1>Loading...</h1>
-                )}
+                </td>
+                :
+                <h1>Loading...</h1>
+              }
+
             </tr>
           </tbody>
         </table>

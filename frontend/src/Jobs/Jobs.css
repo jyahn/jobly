@@ -9,19 +9,21 @@ table {
 }
 
 .Salary-header {
-  color: #169CEE;
+  color: #169cee;
 }
 
-.Salary-button, .Search-button {
-  background-color: rgba(0,0,0,.03);
-  color: #169CEE;
-  border-color: #169CEE;
+.Salary-button,
+.Search-button {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: #169cee;
+  border-color: #169cee;
   position: relative;
 }
 
-.Salary-button:hover, .Search-button:hover {
-  background-color: #169CEE;
-  border-color: #169CEE;
+.Salary-button:hover,
+.Search-button:hover {
+  background-color: #169cee;
+  border-color: #169cee;
 }
 
 .SalaryForm {
@@ -29,26 +31,26 @@ table {
   padding-right: 5%;
 }
 
-.Jobs-search {
+.Jobs-Search {
   text-align: center;
   /* margin: 0 auto accomplishes the same thing as offset-3 */
   margin: 0 auto;
 }
 
-tbody{
+tbody {
   display: table;
   width: 100%;
   text-align: center;
   justify-content: center;
 }
 
-.Jobsss {
+.Jobs-content {
   margin-right: 5%;
-  padding-right: 5%
+  padding-right: 5%;
 }
 
 #filter-descrip {
-  color: #169CEE;
+  color: #169cee;
   font-weight: 600;
   font-size: 1.7vmin;
   margin-top: 25px;
