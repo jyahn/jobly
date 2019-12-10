@@ -47,7 +47,7 @@ class Profile extends Component {
     if (this.state.loading) {
       return 'Loading Profile...'
     }
-    if (!this.props.currUser) {
+    if (!this.props.loggedIn) {
       return <ErrorHandler error={['Oops! You must be logged in to view this page.']} />;
     }
     return (

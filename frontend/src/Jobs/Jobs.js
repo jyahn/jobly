@@ -184,7 +184,8 @@ class Jobs extends Component {
   }
 
   render() {
-    if (!this.props.currUser) {
+    console.log('props in jobs', this.props);
+    if (!this.props.loggedIn) {
       return <ErrorHandler error={['Oops! You must be logged in to view this page.']} />;
     }
     if (this.state.error.length > 0) {

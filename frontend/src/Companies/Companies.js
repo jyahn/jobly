@@ -40,7 +40,7 @@ class Companies extends Component {
 
 
   render() {
-    if (!this.props.currUser) {
+    if (!this.props.loggedIn) {
       return <ErrorHandler error={['Oops! You must be logged in to view this page.']} />;
     }
     return (
