@@ -7,7 +7,7 @@ class ErrorHandler extends Component {
     return (
       <div className="ErrorHandler">
         {this.props.error.map(error => (
-          <h2 key={uuid()}>{error}</h2>
+          <h3 key={uuid()}>{error}</h3>
         ))}
       </div>
     );
