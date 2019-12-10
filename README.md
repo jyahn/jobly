@@ -55,7 +55,8 @@ npm start
 - PostgreSQL
 - Bcrypt
 
-## Features to add
+## To-do
 
+- Fix bug in profile route where refreshing after saving changes renders an empty form. 
 - Infinite scrolling
 - Users should be able to view the list of jobs they've applied to
