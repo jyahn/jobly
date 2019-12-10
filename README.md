@@ -10,7 +10,7 @@ Jobly is [live on Heroku](https://jobly-jy-frontend.herokuapp.com/).
 - [Installation](#installation)
 - [Features](#features)
 - [Technologies](#technologies)
-- [Features to add](#features-to-add)
+- [To-do](#to-do)
 
 ## Screenshots
 
