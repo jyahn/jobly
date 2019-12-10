@@ -54,7 +54,9 @@ class Jobs extends Component {
     })
   }
 
+  // Undo salary filter
   async handleUndo() {
+    // if there is no existing search filter, we query all jobs
     if (this.searchFilter === false) {
       let jobs = await JoblyApi.getJobs()
       jobs.sort((a, b) => a.salary - b.salary);
@@ -63,6 +65,7 @@ class Jobs extends Component {
         salaryFilter: false,
         salaryThreshold: ''
       })
+    // if there is an existing search filter, we query by the existing search filter
     } else {
       let jobs = await JoblyApi.getJobsBySearch({ search: this.state.search })
       jobs.sort((a, b) => a.salary - b.salary);
@@ -76,7 +79,7 @@ class Jobs extends Component {
 
   async handleSalaryFilter(evt, salary) {
     evt.preventDefault();
-    // if there is no existing search filter, we just filter by the new salary filter
+    // if there is no existing search filter, we query by the new salary filter
     if (this.state.searchFilter === false) {
       let jobs = await JoblyApi.getJobsByMinSalary({ salary: salary })
       jobs.sort((a, b) => a.salary - b.salary);
@@ -87,7 +90,7 @@ class Jobs extends Component {
         salaryThreshold: salary
       })
       // if there is an existing search filter, we filter our already search-filtered list
-      // further to only include jobs surpassing the new salary filter
+      // further to only include jobs with salaries surpassing the new salary filter
     } else {
       let jobs = this.state.filteredJobs.filter(job => (job.salary >= salary))
       jobs.sort((a, b) => a.salary - b.salary);
@@ -122,7 +125,7 @@ class Jobs extends Component {
     if (this.state.search === "") {
       searchFilter = false;
     }
-    // if there is no existing salary filter, we just query based on the search filter
+    // if there is no existing salary filter, we query based on the search filter
     if (this.state.salaryFilter === false) {
       let jobs = await JoblyApi.getJobsBySearch({ search: this.state.search })
       jobs.sort((a, b) => a.salary - b.salary);
@@ -132,9 +135,9 @@ class Jobs extends Component {
         searchFilter,
         searchByWord: this.state.search
       })
-      // if there is a salaryf ilter
+      // if there is an existing salary filter
     } else {
-      // if there is no search filter, we just query based on the existing salary filter
+      // if there is no search filter, we query based on the existing salary filter
       if (searchFilter === false) {
         let jobs = await JoblyApi.getJobsByMinSalary({ salary: this.state.salaryThreshold })
         jobs.sort((a, b) => a.salary - b.salary);
@@ -145,7 +148,8 @@ class Jobs extends Component {
           searchByWord: this.state.search
         })
       }
-      // if there is a salary filter AND a search filter
+      // if there is an existing salary filter we filter our already salary-filtered list
+      // further to only include jobs with job titles matching the new search filter
       else {
         let jobs = this.state.filteredJobs.filter(job => (job.title.toLowerCase().includes(this.state.search.toLowerCase())))
         jobs.sort((a, b) => a.salary - b.salary);
