@@ -65,7 +65,7 @@ class Jobs extends Component {
         salaryFilter: false,
         salaryThreshold: ''
       })
-    // if there is an existing search filter, we query by the existing search filter
+      // if there is an existing search filter, we query by the existing search filter
     } else {
       let jobs = await JoblyApi.getJobsBySearch({ search: this.state.search })
       jobs.sort((a, b) => a.salary - b.salary);
@@ -184,10 +184,14 @@ class Jobs extends Component {
   }
 
   render() {
+    if (!this.props.currUser) {
+      return <ErrorHandler error={['Oops! You must be logged in to view this page.']} />;
+    }
     if (this.state.error.length > 0) {
       return <ErrorHandler error={this.state.error} />
     }
     return (
+
       <div className="Jobs">
         {/* Search filter */}
         <div className="Jobs-Search col-6 mt-3">

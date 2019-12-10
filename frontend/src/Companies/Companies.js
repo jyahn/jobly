@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import JoblyApi from "../JoblyApi"
 import CompanyCard from '../CompanyCard/CompanyCard';
+import ErrorHandler from '../ErrorHandler/ErrorHandler';
 import { ListGroup, ListGroupItem, Button, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './Companies.css';
@@ -39,6 +40,9 @@ class Companies extends Component {
 
 
   render() {
+    if (!this.props.currUser) {
+      return <ErrorHandler error={['Oops! You must be logged in to view this page.']} />;
+    }
     return (
       <div className="Companies">
         <div className="Companies-content">

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Profile.css'
 import JoblyApi from "../JoblyApi";
+import ErrorHandler from '../ErrorHandler/ErrorHandler';
 import { Button, Label, Input } from 'reactstrap';
 
 
@@ -45,6 +46,9 @@ class Profile extends Component {
   render() {
     if (this.state.loading) {
       return 'Loading Profile...'
+    }
+    if (!this.props.currUser) {
+      return <ErrorHandler error={['Oops! You must be logged in to view this page.']} />;
     }
     return (
       <div className="Profile-container col-lg-4 col-md-6 offset-4" style={{ opacity: "0." }}>
